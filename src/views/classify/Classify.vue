@@ -13,54 +13,52 @@
         </div>
       </div>
       <div class="right">
-        <van-tabs v-model="active" @click="choose">
+        <van-tabs v-model="active" @click="choose" :ellipsis="false">
           <van-tab
             v-for="(item, index) in categoryData[categoryId].bxMallSubDto"
             :key="index"
             :title="item.mallSubName"
             :name="index"
+            class="title"
           >
-            <div class="wrap" ref="wrapper">
-              <div class="allGoods content">
-                <div
-                  v-for="(item1, index1) in data"
-                  :key="index1"
-                  class="goods"
-                >
-                  <div class="img">
-                    <div class="pic"><img :src="item1.image" alt="" /></div>
-                  </div>
-                  <div class="word">
-                    <div class="name">{{ item1.name }}</div>
-                    <div class="price">
-                      <span class="now">￥{{ item1.present_price }}</span
-                      ><span class="old"
-                        ><s>￥{{ item1.orl_price }}</s></span
-                      >
-                    </div>
-                  </div>
+          </van-tab>
+        </van-tabs>
+
+        <div ref="wrapper" class="allGoods">
+          <div>
+            <div v-for="(item1, index1) in data" :key="index1" class="goods" @click="buy(index1)">
+              <div class="img">
+                <div class="pic"><img :src="item1.image" alt="" /></div>
+              </div>
+              <div class="word">
+                <div class="name">{{ item1.name }}</div>
+                <div class="price">
+                  <span class="now">￥{{ item1.present_price }}</span
+                  ><span class="old"
+                    ><s>￥{{ item1.orl_price }}</s></span
+                  >
                 </div>
               </div>
             </div>
-          </van-tab>
-        </van-tabs>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-// import BScroll from "better-scroll";
+import BScroll from "better-scroll";
 export default {
   name: "Classify",
   components: {},
   props: {},
   data() {
     return {
-      data: [],
-      categoryId: "0",
-      id: "0",
-      active: 0
+      data: [], //分类数据
+      categoryId: "0", //大类id
+      id: "0", //小类id
+      active: 0 //默认大类id
     };
   },
   methods: {
@@ -69,13 +67,6 @@ export default {
       try {
         let res = await this.$api.category(id);
         this.data = res.dataList;
-        // this.$nextTick(() => {
-        //   this.scroll = new BScroll(this.$refs.wrapper, {
-        //     scrollY: true,
-        //     click: true
-        //   });
-        // });
-        // console.log(this.data,"data");
       } catch (e) {
         console.log(e);
       }
@@ -85,28 +76,39 @@ export default {
       this.categoryId = index;
       this.id = "0";
       this.active = 0;
-      // console.log(this.categoryId,"categoryId");
       this.category(
         this.categoryData[this.categoryId].bxMallSubDto[this.id].mallSubId
       );
     },
     //右边小类事件
     choose(name) {
-      // console.log(name,"name");
       this.id = name;
+      console.log(1);
       this.category(
         this.categoryData[this.categoryId].bxMallSubDto[this.id].mallSubId
       );
+    },
+    //跳转详情
+    buy(val) {
+      this.$router.push({name :"productDetails",query:{id:this.data[val].id}})
     }
   },
   mounted() {
     this.category(
       this.categoryData[this.categoryId].bxMallSubDto[this.id].mallSubId
     );
+    this.$nextTick(() => {
+      this.scroll = new BScroll(this.$refs.wrapper, {
+        scrollY: true,
+        click: true,
+        startY: 0
+      });
+    });
   },
   created() {},
   filters: {},
   computed: {
+    //分类数据
     categoryData() {
       return this.$store.state.category;
     }
@@ -117,16 +119,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-/*.wrap {*/
-/*  height: 567px;*/
-/*  overflow: hidden;*/
-/*}*/
-/*.content {*/
-/*  height: 2000px;*/
-/*  flex: 1;*/
-/*  display: flex;*/
-/*  flex-direction: column;*/
-/*}*/
 .all {
   background: white;
   position: absolute;
@@ -151,14 +143,19 @@ export default {
     top: 51px;
     display: flex;
     height: 100%;
+    width: 100%;
   }
   .right {
-    width: 285px;
+    width: 74%;
+    .title {
+      position: fixed;
+    }
   }
   .left {
     background: #f1f8ff;
-    width: 90px;
+    width: 26%;
     height: 100%;
+    z-index: 99;
     .desc {
       height: 40px;
       text-align: center;
@@ -168,15 +165,18 @@ export default {
   }
 }
 .allGoods {
-  position: fixed;
-  top: 91px;
+  overflow: hidden;
+  position: absolute;
+  top: 40px;
+  bottom: 100px;
 }
 .goods {
-  padding: 15px;
+  padding: 5%;
   display: flex;
   background: white;
   font-size: 15px;
   color: red;
+  width: 90%;
   .word {
     padding: 10px;
     .name {
@@ -201,8 +201,6 @@ export default {
         display: block;
       }
     }
-  }
-  .word {
   }
 }
 </style>

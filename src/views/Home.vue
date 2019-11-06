@@ -62,7 +62,6 @@ export default {
         let res = await this.$api.recommend();
         this.data = res.data;
         this.$store.state.category = this.data.category;
-        console.log(this.data);
       } catch (e) {
         console.log(e);
       }
@@ -73,40 +72,47 @@ export default {
   },
   mounted() {
     this.recommend();
+    this.city = this.$store.state.city;
     let _that = this;
-    AMap.plugin("AMap.Geolocation", function() {
-      let geolocation = new AMap.Geolocation({
-        // 是否使用高精度定位，默认：true
-        enableHighAccuracy: true,
-        // 设置定位超时时间，默认：无穷大
-        timeout: 10000,
-        // 定位按钮的停靠位置的偏移量，默认：Pixel(10, 20)
-        buttonOffset: new AMap.Pixel(10, 20),
-        //  定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
-        zoomToAccuracy: true,
-        //  定位按钮的排放位置,  RB表示右下
-        buttonPosition: "RB"
+    if (!this.city){
+      AMap.plugin("AMap.Geolocation", function() {
+        let geolocation = new AMap.Geolocation({
+          // 是否使用高精度定位，默认：true
+          enableHighAccuracy: true,
+          // 设置定位超时时间，默认：无穷大
+          timeout: 10000,
+          // 定位按钮的停靠位置的偏移量，默认：Pixel(10, 20)
+          buttonOffset: new AMap.Pixel(10, 20),
+          //  定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+          zoomToAccuracy: true,
+          //  定位按钮的排放位置,  RB表示右下
+          buttonPosition: "RB"
+        });
+
+        geolocation.getCurrentPosition();
+        AMap.event.addListener(geolocation, "complete", onComplete);
+        AMap.event.addListener(geolocation, "error", onError);
+
+        function onComplete(data) {
+          // data是具体的定位信息
+          _that.city = data.addressComponent.city;
+          _that.$store.state.city = _that.city;
+        }
+
+        function onError(data) {
+          // 定位出错
+          console.log(data);
+        }
       });
-
-      geolocation.getCurrentPosition();
-      AMap.event.addListener(geolocation, "complete", onComplete);
-      AMap.event.addListener(geolocation, "error", onError);
-
-      function onComplete(data) {
-        // data是具体的定位信息
-        _that.city = data.addressComponent.city;
-        _that.$store.state.city = _that.city;
-      }
-
-      function onError(data) {
-        // 定位出错
-        console.log(data);
-      }
-    });
+    }
   },
   created() {},
   filters: {},
-  computed: {},
+  computed: {
+    // city() {
+    //   return this.$store.state.city;
+    // }
+  },
   watch: {},
   directives: {}
 };
@@ -119,9 +125,12 @@ export default {
   line-height: 35px;
   .place {
     margin: 0 10px;
-    width: 77px;
+    width: 80px;
+    position: relative;
     .img {
       display: inline-block;
+      position: absolute;
+      top: 10px;
       margin-left: 5px;
       margin-right: 8px;
       width: 16px;
