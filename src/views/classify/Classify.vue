@@ -1,6 +1,9 @@
 <template>
   <div class="all">
-    <div class="top">商品分类</div>
+    <top>
+      <div slot="back"></div>
+      商品分类
+    </top>
     <div class="foot">
       <div class="left">
         <div
@@ -13,7 +16,7 @@
         </div>
       </div>
       <div class="right">
-        <van-tabs v-model="active" @click="choose" :ellipsis="false">
+        <van-tabs v-model="active" @click="choose" :ellipsis="false" v-if="categoryData[categoryId]">
           <van-tab
             v-for="(item, index) in categoryData[categoryId].bxMallSubDto"
             :key="index"
@@ -49,9 +52,12 @@
 
 <script>
 import BScroll from "better-scroll";
+import top from "../../components/public/Top";
 export default {
   name: "Classify",
-  components: {},
+  components: {
+    top
+  },
   props: {},
   data() {
     return {
@@ -126,18 +132,6 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
-  .top {
-    position: fixed;
-    top: 0;
-    background: white;
-    width: 100%;
-    text-align: center;
-    font-size: 19px;
-    height: 50px;
-    line-height: 50px;
-    border-bottom: 1px solid rgba(119, 120, 114, 0.4);
-    z-index: 99;
-  }
   .foot {
     position: fixed;
     top: 51px;

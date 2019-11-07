@@ -14,10 +14,10 @@
             <div>剩余： {{ data.goodsOne.amount }}</div>
             <div class="like">
               <span v-if="lock"
-                >收藏 : <van-icon name="like-o" size="20px" @click="collect()"
+                >收藏 : <van-icon name="like-o" size="20px" @click="collect" class="img"
               /></span>
               <span v-else
-                >取消收藏 : <van-icon name="like" color="red" size="20px" @click="remove()"
+                >取消收藏 : <van-icon name="like" color="red" size="20px" @click="remove" class="img"
               /></span>
             </div>
           </div>
@@ -73,7 +73,7 @@ export default {
             });
           });
         }
-        console.log(res);
+        console.log(this.data);
       } catch (e) {
         console.log(e);
       }
@@ -82,7 +82,9 @@ export default {
     async collection(goods) {
       try {
         let res = await this.$api.collection(goods);
-        // this.data = res.data;
+        if (res.code === -1) {
+          this.$router.push("/login");
+        }
         console.log(res);
       } catch (e) {
         console.log(e);
@@ -92,19 +94,19 @@ export default {
     async cancelCollection(id) {
       try {
         let res = await this.$api.cancelCollection(id);
-        // this.data = res.data;
         console.log(res);
       } catch (e) {
         console.log(e);
       }
     },
+    //返回上一页面
     goBack() {
       this.$router.back();
     },
     //收藏事件
     collect() {
       this.lock = false;
-      this.collection(this.data);
+      this.collection(this.data.goodsOne);
     },
     //取消收藏事件
     remove() {
@@ -163,8 +165,14 @@ export default {
     justify-content: space-between;
     line-height: 22px;
     .like {
-      width: 100px;
-      text-align: center;
+      width: 80px;
+      text-align: right;
+      position: relative;
+      padding-right: 25px;
+      .img {
+        position: absolute;
+        right: 0;
+      }
     }
   }
 }

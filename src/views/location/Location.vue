@@ -1,9 +1,13 @@
 <template>
   <div>
-    <div class="top">
-      <div class="back" @click="goBack"><van-icon name="arrow-left" /></div>
-      <div class="title">城市列表</div>
-    </div>
+<!--    <div class="top">-->
+<!--      <div class="back" @click="goBack"><van-icon name="arrow-left" /></div>-->
+<!--      <div class="title">城市列表</div>-->
+<!--    </div>-->
+    <top>
+<!--      <div slot="back"></div>-->
+      城市列表
+    </top>
     <div class="search">
       <van-search
         placeholder="请输入城市关键词"
@@ -48,9 +52,12 @@
 
 <script>
 import cities from "../../assets/commonality/city.js";
+import top from "../../components/public/Top";
 export default {
   name: "Location",
-  components: {},
+  components: {
+    top
+  },
   props: {},
   data() {
     return {
@@ -63,10 +70,6 @@ export default {
     };
   },
   methods: {
-    //返回主页
-    goBack() {
-      this.$router.push("/home");
-    },
     //选中城市
     choose(val) {
       this.$store.state.city = val;
@@ -107,23 +110,23 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.top {
-  position: relative;
-  font-size: 19px;
-  height: 50px;
-  line-height: 50px;
-  background: white;
-  border-bottom: 1px solid rgba(119, 120, 114, 0.4);
-  .back {
-    position: absolute;
-    font-size: 30px;
-    top: 5px;
-    left: 10px;
-  }
-  .title {
-    text-align: center;
-  }
-}
+/*.top {*/
+/*  position: relative;*/
+/*  font-size: 19px;*/
+/*  height: 50px;*/
+/*  line-height: 50px;*/
+/*  background: white;*/
+/*  border-bottom: 1px solid rgba(119, 120, 114, 0.4);*/
+/*  .back {*/
+/*    position: absolute;*/
+/*    font-size: 30px;*/
+/*    top: 5px;*/
+/*    left: 10px;*/
+/*  }*/
+/*  .title {*/
+/*    text-align: center;*/
+/*  }*/
+/*}*/
 .search {
   margin: 10px;
   font-size: 17px;

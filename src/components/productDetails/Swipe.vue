@@ -4,8 +4,14 @@
       <van-swipe-item v-for="(item, index) in image" :key="index"
         ><img :src="item" alt=""
       /></van-swipe-item>
-<!--      <div class="custom-indicator" slot="indicator">{{ current + 1 }}/4</div>-->
     </van-swipe>
+<!--    <van-image-preview-->
+<!--        v-model="show"-->
+<!--        :images="images"-->
+<!--        @change="onChange"-->
+<!--    >-->
+<!--      <template v-slot:index>第{{ index }}页</template>-->
+<!--    </van-image-preview>-->
   </div>
 </template>
 
@@ -21,13 +27,11 @@ export default {
   },
   data() {
     return {
-      // current: 0
+
     };
   },
   methods: {
-    // onChange(index) {
-    //   this.current = index;
-    // }
+
   },
   mounted() {},
   created() {},
