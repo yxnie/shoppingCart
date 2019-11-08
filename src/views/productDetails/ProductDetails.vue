@@ -14,10 +14,10 @@
             <div>剩余： {{ data.goodsOne.amount }}</div>
             <div class="like">
               <span v-if="lock"
-                >收藏 : <van-icon name="like-o" size="20px" @click="collect" class="img"
+                >收藏 : <van-icon name="like-o" size="20px" @click="collection(data.goodsOne)" class="img"
               /></span>
               <span v-else
-                >取消收藏 : <van-icon name="like" color="red" size="20px" @click="remove" class="img"
+                >取消收藏 : <van-icon name="like" color="red" size="20px" @click="cancelCollection(id)" class="img"
               /></span>
             </div>
           </div>
@@ -35,7 +35,7 @@
         <detail :data="data.goodsOne"></detail>
       </div>
     </div>
-    <goodsAction></goodsAction>
+    <goodsAction :id="id" :price="data.goodsOne.present_price" v-if="data.goodsOne"></goodsAction>
   </div>
 </template>
 
@@ -60,6 +60,7 @@ export default {
     };
   },
   methods: {
+    //获取商品数据
     async goodOne(id) {
       try {
         let res = await this.$api.goodOne(id);
@@ -73,7 +74,7 @@ export default {
             });
           });
         }
-        console.log(this.data);
+        console.log(this.data,"data");
       } catch (e) {
         console.log(e);
       }
@@ -84,7 +85,10 @@ export default {
         let res = await this.$api.collection(goods);
         if (res.code === -1) {
           this.$router.push("/login");
+        }else {
+          this.lock = false;
         }
+        this.$toast(res.msg);
         console.log(res);
       } catch (e) {
         console.log(e);
@@ -95,6 +99,7 @@ export default {
       try {
         let res = await this.$api.cancelCollection(id);
         console.log(res);
+        this.lock = true;
       } catch (e) {
         console.log(e);
       }
@@ -103,19 +108,21 @@ export default {
     goBack() {
       this.$router.back();
     },
-    //收藏事件
-    collect() {
-      this.lock = false;
-      this.collection(this.data.goodsOne);
+    //判断是否收藏
+    async isCollection(id) {
+      try {
+        let res = await this.$api.isCollection(id);
+        if (res.isCollection) {
+          this.lock = false;
+        }
+      } catch (e) {
+        console.log(e);
+      }
     },
-    //取消收藏事件
-    remove() {
-      this.lock = true;
-      this.cancelCollection(this.id);
-    }
   },
   mounted() {
     this.id = this.$route.query.id;
+    this.isCollection(this.id);
     this.goodOne(this.id);
   },
   created() {},

@@ -1,0 +1,874 @@
+2019-11-07 11:19:13,017 ERROR 6312 [-/127.0.0.1/-/17ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:19:15,330 ERROR 6312 [-/127.0.0.1/-/3ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:19:18,731 ERROR 6312 [-/127.0.0.1/-/5ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:19:19,264 ERROR 6312 [-/127.0.0.1/-/4ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:20:16,026 ERROR 6312 [-/127.0.0.1/-/3ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:22:21,358 ERROR 6312 [-/127.0.0.1/-/3ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:22:23,302 ERROR 6312 [-/127.0.0.1/-/6ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:23:42,565 ERROR 6312 [-/127.0.0.1/-/5ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:23:45,182 ERROR 6312 [-/127.0.0.1/-/4ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:24:43,316 ERROR 6312 [-/127.0.0.1/-/4ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:25:29,441 ERROR 6312 [-/127.0.0.1/-/2ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:25:34,005 ERROR 6312 [-/127.0.0.1/-/3ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:26:16,487 ERROR 6312 [-/127.0.0.1/-/2ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:27:41,148 ERROR 6312 [-/127.0.0.1/-/5ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:27:44,992 ERROR 6312 [-/127.0.0.1/-/4ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:29:44,197 ERROR 6312 [-/127.0.0.1/-/2ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:29:57,067 ERROR 6312 [-/127.0.0.1/-/2ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:30:39,730 ERROR 6312 [-/127.0.0.1/-/3ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:34:47,176 ERROR 6312 [-/127.0.0.1/-/6ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:34:50,411 ERROR 6312 [-/127.0.0.1/-/4ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:34:53,070 ERROR 6312 [-/127.0.0.1/-/6ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:34:55,290 ERROR 6312 [-/127.0.0.1/-/3ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:36:48,885 ERROR 6312 [-/127.0.0.1/-/2ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:36:50,563 ERROR 6312 [-/127.0.0.1/-/2ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:37:33,303 ERROR 6312 [-/127.0.0.1/-/2ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:37:38,616 ERROR 6312 [-/127.0.0.1/-/2ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:38:04,253 ERROR 6312 [-/127.0.0.1/-/2ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:38:05,275 ERROR 6312 [-/127.0.0.1/-/1ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:38:05,986 ERROR 6312 [-/127.0.0.1/-/4ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:38:07,056 ERROR 6312 [-/127.0.0.1/-/1ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:38:08,363 ERROR 6312 [-/127.0.0.1/-/2ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:38:09,512 ERROR 6312 [-/127.0.0.1/-/2ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:38:29,087 ERROR 6312 [-/127.0.0.1/-/2ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:38:30,278 ERROR 6312 [-/127.0.0.1/-/2ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:38:46,837 ERROR 6312 [-/127.0.0.1/-/2ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:38:47,305 ERROR 6312 [-/127.0.0.1/-/2ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:38:48,167 ERROR 6312 [-/127.0.0.1/-/3ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:38:48,999 ERROR 6312 [-/127.0.0.1/-/2ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-07 11:43:33,361 ERROR 6312 [-/127.0.0.1/-/4ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6312
+hostname: stu005
+
+2019-11-08 14:24:26,994 ERROR 2932 [-/127.0.0.1/-/9ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 2932
+hostname: stu005
+
+2019-11-08 14:24:27,285 ERROR 2932 [-/127.0.0.1/-/5ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 2932
+hostname: stu005
+
+2019-11-08 14:24:28,838 ERROR 2932 [-/127.0.0.1/-/2ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 2932
+hostname: stu005
+
+2019-11-08 14:24:29,080 ERROR 2932 [-/127.0.0.1/-/3ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 2932
+hostname: stu005
+
+2019-11-08 14:24:29,100 ERROR 2932 [-/127.0.0.1/-/2ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 2932
+hostname: stu005
+
+2019-11-08 14:26:48,097 ERROR 2932 [-/127.0.0.1/-/9ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 2932
+hostname: stu005
+
+2019-11-08 14:26:56,542 ERROR 2932 [-/127.0.0.1/-/1ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 2932
+hostname: stu005
+

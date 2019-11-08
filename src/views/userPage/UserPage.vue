@@ -5,16 +5,17 @@
       会员中心
     </top>
     <div class="center">
-      <settings :data="data.userInfo"></settings>
-      <div class="head" v-if="data.userInfo">
-        <img :src="data.userInfo.avatar" alt="" />
+      <settings v-if="!data"></settings>
+      <div class="head">
+        <img src="http://img4.imgtn.bdimg.com/it/u=198369807,133263955&fm=27&gp=0.jpg" alt="" />
       </div>
-      <div class="username" v-if="data.userInfo">
-        欢迎您：{{ data.userInfo.nickname }}
+      <div class="username" v-if="data">
+        欢迎您：{{ data.nickname }}
       </div>
+      <div v-else class="username"></div>
       <div class="loginOut">
-        <div v-if="data.code === 200">退出登录</div>
-        <div v-else>登录/注册</div>
+        <div v-if="data" @click="loginOut">退出登录</div>
+        <div v-else @click="login">登录/注册</div>
       </div>
     </div>
     <bar></bar>
@@ -57,27 +58,33 @@ export default {
   props: {},
   data() {
     return {
-      data: {},
     };
   },
   methods: {
-    async user() {
+    async loginOut() {
       try {
-        let res = await this.$api.user();
-        this.data = res;
-        console.log(this.data, "data");
+        let res = await this.$api.loginOut();
+        if (res.code === 0) {
+          this.$store.state.user = null;
+          localStorage.removeItem("name");
+          this.$toast("退出成功，感谢你的光顾");
+        }
       } catch (e) {
         console.log(e);
       }
     },
-
+    login() {
+      this.$router.push("/login");
+    }
   },
-  mounted() {
-    this.user();
-  },
+  mounted() {},
   created() {},
   filters: {},
-  computed: {},
+  computed: {
+    data() {
+      return this.$store.state.user;
+    }
+  },
   watch: {},
   directives: {}
 };
@@ -92,6 +99,7 @@ export default {
   text-align: center;
   position: relative;
   padding: 25px;
+  height: 188px;
   .head {
     display: flex;
     justify-content: center;
@@ -106,6 +114,7 @@ export default {
   .username {
     margin: 20px;
     font-weight: bold;
+    height: 20px;
   }
   .loginOut {
     font-size: 18px;

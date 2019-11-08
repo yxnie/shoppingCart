@@ -82,11 +82,14 @@ export default {
     async register(nickname, password, verify) {
       try {
         let res = await this.$api.register(nickname, password, verify);
-        console.log(res);
         if (res.code === 200) {
-          this.$store.state.username = this.user.nickname; //用户名存入store
+          this.$store.state.user = res.userInfo; //用户存入store
+          // console.log(this.$store.state.user,2);
           localStorage.setItem("name", JSON.stringify(this.user)); //用户存入localstorage
           this.$router.push("/userPage");
+        }else {
+          this.getAverify();
+          this.user.verify = "";
         }
         this.$toast(res.msg);
       } catch (e) {
@@ -97,11 +100,14 @@ export default {
     async login(nickname, password, verify) {
       try {
         let res = await this.$api.login(nickname, password, verify);
-        console.log(res);
         if (res.code === 200) {
-          this.$store.state.username = this.user.nickname; //用户名存入store
+          this.$store.state.user = res.userInfo; //用户存入store
+          // console.log(this.$store.state.user,1);
           localStorage.setItem("name", JSON.stringify(this.user)); //用户存入localstorage
           this.$router.push("/userPage");
+        }else {
+          this.getAverify();
+          this.user.verify = "";
         }
         this.$toast(res.msg);
       } catch (e) {

@@ -17,9 +17,14 @@
         <div class="back" @click="shut">
           <van-icon name="arrow-left" size="30px" color="#5649fb" />
         </div>
-        <div class="content">
+        <div class="content" v-if="data">
           <div>
             <van-field label="github" v-model="github" placeholder="" />
+          </div>
+          <div class="head">
+            <div class="arrow"><van-icon name="arrow" /></div>
+            <div>头像</div>
+            <img :src="data.avatar" alt="" class="img">
           </div>
           <div class="single">
             <van-field
@@ -76,8 +81,8 @@
             </div>
           </van-popup>
           <div class="single but">
-            <van-button type="primary" size="large">保存</van-button>
-            <van-button size="large" class="cancel">取消</van-button>
+            <van-button type="primary" size="large" @click="save">保存</van-button>
+            <van-button size="large" class="cancel" @click="cancel">取消</van-button>
           </div>
         </div>
       </div>
@@ -92,28 +97,37 @@ export default {
   components: {
     top
   },
-  props: {
-    data: {
-      type: Object,
-      default: () => {}
-    }
-  },
+  props: {},
   data() {
     return {
       show: false,
       github: "",
       email: "",
       now: new Date(),
-      birthday: "",
+      birthday: null,
       minTime: new Date(1919, 0, 1),
       checkBirthday: false,
-      showBirthday: null
+      showBirthday: null,
+      id: ""
     };
   },
   methods: {
+    //用户接口
+    async user() {
+      try {
+        let res = await this.$api.user();
+        if (res.code !== -1){
+          this.id = res.userInfo._id;
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    },
     //打开设置信息页面
     showPopup() {
       this.show = true;
+      this.birthday = this.$dayjs().year(this.data.year).month(this.data.month).date(this.data.day);
+      this.showBirthday = this.$dayjs(this.birthday).format("YYYY年MM月DD日");
     },
     //关闭设置信息页面
     shut() {
@@ -142,18 +156,46 @@ export default {
     //取消选择生日时间
     revocation() {
       this.checkBirthday = false;
+    },
+    //保存信息接口
+    async saveUser(val) {
+      try {
+        let res = await this.$api.saveUser(val);
+        if (res.code === 200) {
+          this.$toast(res.msg);
+          this.$store.state.user = res.user;
+        }
+        console.log(res);
+      } catch (e) {
+        console.log(e);
+      }
+    },
+    //保存修改
+    save() {
+      let user = {};
+      user.year = this.$dayjs(this.birthday).year();
+      user.month = this.$dayjs(this.birthday).month();
+      user.day = this.$dayjs(this.birthday).date();
+      user.gender = this.data.gender;
+      user.nickname = this.data.nickname;
+      user.id = this.id;
+      this.saveUser(user);
+    },
+    //取消修改
+    cancel() {
+      this.show = false;
     }
   },
   mounted() {
-    this.birthday = this.$dayjs()
-      .year(this.data.year)
-      .month(this.data.month)
-      .date(this.data.day);
-    this.showBirthday = this.$dayjs(this.birthday).format("YYYY年MM月DD日");
+    this.user();
   },
   created() {},
   filters: {},
-  computed: {},
+  computed: {
+    data() {
+      return this.$store.state.user;
+    }
+  },
   watch: {},
   directives: {}
 };
@@ -186,4 +228,25 @@ export default {
   margin-top: 10px;
   border: 1px solid rgba(113, 114, 108, 0.8);
 }
+.head {
+  height: 80px;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  padding: 0 16px;
+  line-height: 80px;
+  .img {
+    display: block;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    margin-right: 10px;
+  }
+  .arrow {
+    position: absolute;
+    right: 10px;
+    font-size: 25px;
+  }
+}
+
 </style>
