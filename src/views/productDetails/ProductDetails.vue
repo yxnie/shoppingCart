@@ -74,7 +74,6 @@ export default {
             });
           });
         }
-        console.log(this.data,"data");
       } catch (e) {
         console.log(e);
       }

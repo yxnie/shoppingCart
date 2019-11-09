@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="all">
     <top>
       <div slot="back"></div>
       会员中心
@@ -7,11 +7,12 @@
     <div class="center">
       <settings v-if="!data"></settings>
       <div class="head">
-        <img src="http://img4.imgtn.bdimg.com/it/u=198369807,133263955&fm=27&gp=0.jpg" alt="" />
+        <img
+          src="http://img4.imgtn.bdimg.com/it/u=198369807,133263955&fm=27&gp=0.jpg"
+          alt=""
+        />
       </div>
-      <div class="username" v-if="data">
-        欢迎您：{{ data.nickname }}
-      </div>
+      <div class="username" v-if="data">欢迎您：{{ data.nickname }}</div>
       <div v-else class="username"></div>
       <div class="loginOut">
         <div v-if="data" @click="loginOut">退出登录</div>
@@ -30,7 +31,7 @@
         <van-icon name="star-o" />
         <div class="desc">收藏商品</div>
       </div>
-      <div class="word">
+      <div class="word" @click="skip('/addressList')">
         <van-icon name="arrow" class="go" />
         <van-icon name="map-marked" />
         <div class="desc">地址管理</div>
@@ -57,8 +58,7 @@ export default {
   },
   props: {},
   data() {
-    return {
-    };
+    return {};
   },
   methods: {
     async loginOut() {
@@ -75,6 +75,9 @@ export default {
     },
     login() {
       this.$router.push("/login");
+    },
+    skip(path){
+      this.$router.push(path);
     }
   },
   mounted() {},
@@ -91,6 +94,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.all {
+  height: 100vh;
+  background: white;
+}
 .center {
   background: #e30c7b;
   margin-top: 51px;

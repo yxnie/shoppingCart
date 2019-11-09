@@ -89,7 +89,6 @@ export default {
     //右边小类事件
     choose(name) {
       this.id = name;
-      console.log(1);
       this.category(
         this.categoryData[this.categoryId].bxMallSubDto[this.id].mallSubId
       );

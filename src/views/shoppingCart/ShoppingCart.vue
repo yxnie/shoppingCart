@@ -4,10 +4,14 @@
       <div slot="back"></div>
       购物车
     </top>
-    <div v-if="login === null" class="all">
-      <div class="empty">
-        <div class="icon"><van-icon name="shopping-cart-o" size="150px" color="red"/></div>
-        <div class="but"><van-button round type="info" size="large">去登录</van-button></div>
+    <div v-if="login === null">
+      <div class="allPage">
+        <div class="all">
+          <div class="empty">
+            <div class="icon"><van-icon name="shopping-cart-o" size="150px" color="red"/></div>
+            <div class="but"><van-button round type="info" size="large">去登录</van-button></div>
+          </div>
+        </div>
       </div>
     </div>
     <div v-else-if="shopList.length" class="all">
@@ -17,7 +21,7 @@
       <div class="empty">
         <div class="icon"><van-icon name="shopping-cart-o" size="150px" color="red"/></div>
         <div>您的购物车还是空空的哦</div>
-        <div class="but"><van-button round type="info" size="large">去购物</van-button></div>
+        <div class="but"><van-button round type="info" size="large" @click="goShopping">去购物</van-button></div>
       </div>
     </div>
   </div>
@@ -35,7 +39,7 @@ export default {
   props: {},
   data() {
     return {
-      shopList:[]
+      shopList: []
     };
   },
   methods: {
@@ -43,10 +47,12 @@ export default {
       try {
         let res = await this.$api.getCard();
         this.shopList = res.shopList;
-        console.log(this.shopList,1);
       } catch (e) {
         console.log(e);
       }
+    },
+    goShopping() {
+      this.$router.push("/");
     }
   },
   mounted() {
@@ -65,18 +71,23 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.all {
+.allPage {
   margin-top: 51px;
-  .empty {
-    text-align: center;
-    .icon {
-      padding-top: 50px;
-      padding-bottom: 20px;
-    }
-    .but {
-      width: 110px;
-      margin: 30px auto;
-    }
+  position: fixed;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  background: white;
+}
+.empty {
+  text-align: center;
+  .icon {
+    padding-top: 50px;
+    padding-bottom: 20px;
+  }
+  .but {
+    width: 110px;
+    margin: 30px auto;
   }
 }
 </style>

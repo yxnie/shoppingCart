@@ -86,7 +86,7 @@ export default {
           this.$store.state.user = res.userInfo; //用户存入store
           // console.log(this.$store.state.user,2);
           localStorage.setItem("name", JSON.stringify(this.user)); //用户存入localstorage
-          this.$router.push("/userPage");
+          this.$router.back();
         }else {
           this.getAverify();
           this.user.verify = "";
@@ -104,7 +104,7 @@ export default {
           this.$store.state.user = res.userInfo; //用户存入store
           // console.log(this.$store.state.user,1);
           localStorage.setItem("name", JSON.stringify(this.user)); //用户存入localstorage
-          this.$router.push("/userPage");
+          this.$router.back();
         }else {
           this.getAverify();
           this.user.verify = "";

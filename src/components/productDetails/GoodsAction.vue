@@ -4,17 +4,21 @@
       <van-goods-action-icon
         icon="chat-o"
         text="首页"
-        @click="onClickIcon('/')"></van-goods-action-icon>
+        @click="onClickIcon('/')"
+      ></van-goods-action-icon>
       <van-goods-action-icon
         icon="cart-o"
-        :info="num"
         text="购物车"
-        @click="onClickIcon('/shoppingCart')"></van-goods-action-icon>
+        @click="onClickIcon('/shoppingCart')"
+      >
+      </van-goods-action-icon>
+      <div class="num" v-if="num">{{ num }}</div>
       <van-goods-action-button type="warning" text="加入购物车" @click="add" />
       <van-goods-action-button
         type="danger"
         text="立即购买"
-        @click="onClickButton"></van-goods-action-button>
+        @click="onClickButton"
+      ></van-goods-action-button>
     </van-goods-action>
   </div>
 </template>
@@ -63,10 +67,9 @@ export default {
     async editCart(count, id, mallPrice) {
       try {
         let res = await this.$api.editCart(count, id, mallPrice);
-        // if (res.code === 200) {
-        //   this.$toast(res.msg);
-        // }
-        console.log(res,"add");
+        if (res.code === 200) {
+          this.$toast("添加成功");
+        }
       } catch (e) {
         console.log(e);
       }
@@ -108,4 +111,18 @@ export default {
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.num {
+  position: absolute;
+  top: 0;
+  left: 78px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: red;
+  color: white;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+}
+</style>
