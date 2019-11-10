@@ -5,7 +5,7 @@
       <van-tabbar-item icon="wap-home-o" @click="skip('/')"
         >商城</van-tabbar-item
       >
-      <van-tabbar-item icon="wap-nav" @click="skip('/classify')"
+      <van-tabbar-item icon="wap-nav" @click="skipClassify"
         >分类</van-tabbar-item
       >
       <van-tabbar-item icon="shopping-cart" @click="skip('/shoppingCart')"
@@ -31,6 +31,9 @@ export default {
   methods: {
     skip(path) {
       this.$router.push(path);
+    },
+    skipClassify(){
+      this.$router.push({name:"classify",query:{categoryId:0}});
     }
   },
   mounted() {},

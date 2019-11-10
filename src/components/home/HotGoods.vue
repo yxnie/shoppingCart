@@ -1,6 +1,6 @@
 <template>
   <div class="all">
-    <div v-for="(item, index) in hot" :key="index" class="commodity">
+    <div v-for="(item, index) in hot" :key="index" class="commodity"  @click="skip(item)">
       <img :src="item.image" alt="" />
       <div class="name">{{item.name}}</div>
       <div class="word"><span class="color">￥{{item.price}}</span><span><s class="mallPrice">￥{{item.mallPrice}}</s></span></div>
@@ -21,7 +21,11 @@ export default {
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    skip(item) {
+      this.$router.push({name :"productDetails",query:{id:item.goodsId}})
+    }
+  },
   mounted() {},
   created() {},
   filters: {},

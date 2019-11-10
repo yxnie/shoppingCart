@@ -88,7 +88,6 @@ export default {
           this.lock = false;
         }
         this.$toast(res.msg);
-        console.log(res);
       } catch (e) {
         console.log(e);
       }

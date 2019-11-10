@@ -1,11 +1,11 @@
 <template>
   <div>
     <div class="top">
-      <div class="desc" v-if="floor[0]"><img :src="floor[0].image" alt="" /></div>
+      <div class="desc" v-if="floor[0]"><img :src="floor[0].image" alt="" @click="skip(floor[0])"/></div>
       <div class="desc">
         <div v-for="(item, index) in floor.slice(1, 3)" :key="index">
           <div v-if="item">
-            <img :src="item.image" alt="" />
+            <img :src="item.image" alt="" @click="skip(item)" />
           </div>
         </div>
       </div>
@@ -13,7 +13,7 @@
     <div class="bottom">
       <div v-for="(item, index) in floor.slice(3)" :key="index" class="floor">
         <div v-if="item">
-          <img :src="item.image" alt="" />
+          <img :src="item.image" alt="" @click="skip(item)" />
         </div>
       </div>
     </div>
@@ -33,7 +33,11 @@ export default {
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    skip(item) {
+      this.$router.push({name :"productDetails",query:{id:item.goodsId}})
+    }
+  },
   mounted() {},
   created() {},
   filters: {},

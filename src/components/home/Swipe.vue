@@ -2,7 +2,7 @@
   <div>
     <van-swipe :autoplay="3000" indicator-color="white">
       <van-swipe-item v-for="(item, index) in slides" :key="index"
-        ><img :src="item.image" alt=""
+        ><img :src="item.image" alt="" @click="skip(item)"
       /></van-swipe-item>
     </van-swipe>
   </div>
@@ -21,7 +21,11 @@ export default {
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    skip(item) {
+      this.$router.push({name :"productDetails",query:{id:item.goodsId}})
+    }
+  },
   mounted() {},
   created() {},
   filters: {},

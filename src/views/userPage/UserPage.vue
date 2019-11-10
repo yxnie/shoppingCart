@@ -26,7 +26,7 @@
         <van-icon name="orders-o" />
         <div class="desc">全部订单</div>
       </div>
-      <div class="word">
+      <div class="word" @click="skip('/collect')">
         <van-icon name="arrow" class="go" />
         <van-icon name="star-o" />
         <div class="desc">收藏商品</div>
@@ -95,8 +95,8 @@ export default {
 
 <style scoped lang="scss">
 .all {
-  height: 100vh;
   background: white;
+  height: 90vh;
 }
 .center {
   background: #e30c7b;

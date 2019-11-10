@@ -7,9 +7,9 @@
       <van-address-list
         v-model="chosenAddressId"
         :list="list"
-        disabled-text="以下地址超出配送范围"
         @add="onAdd"
         @edit="onEdit"
+        @select="select"
       />
     </div>
   </div>
@@ -25,45 +25,48 @@ export default {
   props: {},
   data() {
     return {
-      chosenAddressId: "1",
-      list: [
-        {
-          id: "1",
-          name: "张三",
-          tel: "13000000000",
-          address: "浙江省杭州市西湖区文三路 138 号东方通信大厦 7 楼 501 室"
-        },
-        {
-          id: "2",
-          name: "李四",
-          tel: "1310000000",
-          address: "浙江省杭州市拱墅区莫干山路 50 号"
-        }
-      ],
-      address: []
+      chosenAddressId: null,
+      list: []
     };
   },
   methods: {
+    //获取地址数据
     async getAddress() {
       try {
         let res = await this.$api.getAddress();
-        console.log(res,3);
         if (res.code === 200) {
-          res.address;
-          this.list=res.address.map((item,index) => {
-            console.log(item, index);
-          })
+          res.address.map((item, index) => {
+            if (item.isDefault) {
+              this.chosenAddressId = index;
+            }
+            item.id = index;
+          });
+          let obj = res.address.splice(this.chosenAddressId, 1);
+          res.address.unshift(obj[0]);
+          this.list = res.address;
         }
       } catch (e) {
         console.log(e);
       }
     },
+    //添加地址
     onAdd() {
       this.$router.push("/editAddress");
     },
-
-    onEdit(item, index) {
-      this.$toast("编辑地址:" + index);
+    //编辑地址
+    onEdit(item) {
+      this.$router.push({ name: "editAddress", query: { info: item } });
+    },
+    //修改默认地址
+    async select(item) {
+      try {
+        let res = await this.$api.setDefaultAddress(item._id);
+        if (res.code === 200) {
+          this.$toast(res.msg);
+        }
+      } catch (e) {
+        console.log(e);
+      }
     }
   },
   mounted() {

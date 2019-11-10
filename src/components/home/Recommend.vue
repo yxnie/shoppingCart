@@ -4,7 +4,7 @@
     <div ref="wrapper" class="one">
       <div class="wrapper">
         <div v-for="(item, index) in recommend" :key="index" class="content">
-          <div><img :src="item.image" alt="" /></div>
+          <div><img :src="item.image" alt="" @click="shipInfo(item)" /></div>
           <div class="name">{{ item.goodsName }}</div>
           <div class="word">
             <span>￥{{ item.price }}</span
@@ -13,8 +13,8 @@
             >
           </div>
           <div class="but">
-            <div class="but1"><van-icon name="shopping-cart-o" /></div>
-            <div class="but2">查看详情</div>
+            <div class="but1" @click="addShop(item)"><van-icon name="shopping-cart-o" /></div>
+            <div class="but2" @click="shipInfo(item)">查看详情</div>
           </div>
         </div>
       </div>
@@ -36,7 +36,26 @@ export default {
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    //前往详情
+    shipInfo(item) {
+      this.$router.push({
+        name: "productDetails",
+        query: { id: item.goodsId }
+      });
+    },
+    //加入购物车
+    async addShop(item) {
+      try {
+        let res = await this.$api.addShop(item.goodsId);
+        if (res.code === 200) {
+          this.$toast(res.msg);
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    },
+  },
   mounted() {
     this.$nextTick(() => {
       this.scroll = new BScroll(this.$refs.wrapper, {

@@ -29,7 +29,7 @@
 
 <script>
 import top from "../../components/public/Top";
-import goodsList from "../../components/shoppingCart/GoodsList"
+import goodsList from "../../components/shoppingCart/GoodsList";
 export default {
   name: "ShoppingCart",
   components: {

@@ -15,7 +15,7 @@
     <div class="category">
       <div v-for="(item, index) in data.category" :key="index" class="desc">
         <div class="con">
-          <img :src="item.image" alt="" />
+          <img :src="item.image" alt="" @click="goClassify(index)"/>
           <div class="word">{{ item.mallCategoryName }}</div>
         </div>
       </div>
@@ -68,6 +68,9 @@ export default {
     },
     skip(path) {
       this.$router.push(path);
+    },
+    goClassify(index) {
+      this.$router.push({name:"classify",query:{categoryId:index}})
     }
   },
   mounted() {
@@ -108,11 +111,7 @@ export default {
   },
   created() {},
   filters: {},
-  computed: {
-    // city() {
-    //   return this.$store.state.city;
-    // }
-  },
+  computed: {},
   watch: {},
   directives: {}
 };

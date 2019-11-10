@@ -9,6 +9,7 @@
         show-delete
         show-set-default
         show-search-result
+        :address-info="info"
         :area-columns-placeholder="['请选择', '请选择', '请选择']"
         @save="onSave"
         @delete="onDelete"
@@ -28,30 +29,47 @@ export default {
   props: {},
   data() {
     return {
-      areaList
+      areaList,
+      info: {}
     };
   },
   methods: {
+    //添加，修改地址
     async onSave(form) {
-      console.log(form,1);
       let address =
         form.province + form.city + form.county + form.addressDetail;
       form.address = address;
+      if (!this.info) {
+        console.log("添加");
+      } else {
+        form.id = this.info._id;
+      }
       try {
         let res = await this.$api.postAddress(form);
-        console.log(res,2);
-        if (res.code===200){
+        if (res.code === 200) {
           this.$toast(res.msg);
         }
       } catch (e) {
         console.log(e);
       }
     },
-    onDelete() {
-      this.$toast("delete");
+    //添加地址
+    async onDelete(form) {
+      try {
+        let res = await this.$api.deleteAddress(form._id);
+        if (res.code === 200) {
+          this.$toast(res.msg);
+        } else if (res.code === 200) {
+          this.$toast(res.msg);
+        }
+      } catch (e) {
+        console.log(e);
+      }
     }
   },
-  mounted() {},
+  mounted() {
+    this.info = this.$route.query.info; //接收编辑地址信息
+  },
   created() {},
   filters: {},
   computed: {},

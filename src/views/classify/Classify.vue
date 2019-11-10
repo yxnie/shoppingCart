@@ -11,6 +11,7 @@
           :key="index"
           class="desc"
           @click="left(index)"
+          :class="{bg:categoryId===index}"
         >
           {{ item.mallCategoryName }}
         </div>
@@ -62,9 +63,9 @@ export default {
   data() {
     return {
       data: [], //分类数据
-      categoryId: "0", //大类id
-      id: "0", //小类id
-      active: 0 //默认大类id
+      categoryId: 0, //大类id
+      id: 0, //小类id
+      active: 0, //默认小类id
     };
   },
   methods: {
@@ -80,7 +81,7 @@ export default {
     //左边大类事件
     left(index) {
       this.categoryId = index;
-      this.id = "0";
+      this.id = 0;
       this.active = 0;
       this.category(
         this.categoryData[this.categoryId].bxMallSubDto[this.id].mallSubId
@@ -99,6 +100,7 @@ export default {
     }
   },
   mounted() {
+    this.categoryId = this.$route.query.categoryId;
     this.category(
       this.categoryData[this.categoryId].bxMallSubDto[this.id].mallSubId
     );
@@ -154,6 +156,9 @@ export default {
       text-align: center;
       line-height: 40px;
       border-bottom: 1px solid rgba(119, 120, 114, 0.4);
+    }
+    .bg {
+      background: white;
     }
   }
 }
