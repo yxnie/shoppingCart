@@ -2,16 +2,15 @@
   <div>
     <van-swipe :autoplay="3000">
       <van-swipe-item v-for="(item, index) in image" :key="index"
-        ><img :src="item" alt=""
+        ><img :src="item" alt="" @click="run"
       /></van-swipe-item>
     </van-swipe>
-<!--    <van-image-preview-->
-<!--        v-model="show"-->
-<!--        :images="images"-->
-<!--        @change="onChange"-->
-<!--    >-->
-<!--      <template v-slot:index>第{{ index }}页</template>-->
-<!--    </van-image-preview>-->
+    <van-image-preview
+        v-model="show"
+        :images="image"
+        @change="onChange"
+    >
+    </van-image-preview>
   </div>
 </template>
 
@@ -27,11 +26,16 @@ export default {
   },
   data() {
     return {
-
+      show: false
     };
   },
   methods: {
-
+    onChange(index) {
+      this.index = index;
+    },
+    run() {
+      this.show = true;
+    }
   },
   mounted() {},
   created() {},

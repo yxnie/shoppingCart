@@ -15,13 +15,13 @@
           <div class="topTitle" :class="{top1:allPrice}">合计：<span class="color">￥{{ allPrice }}</span></div>
           <div :class="{top2:allPrice}" v-if="allPrice">请确认订单</div>
         </div>
-        <div class="but" v-if="allPrice">
-          <div class="desc">
-            <div class="before"><van-button color="linear-gradient(to right, #ff63e7, #fd0fff)" size="small" @click="expurgate">删除</van-button></div>
-            <div><van-button color="linear-gradient(to right, #ff63e7, #fd0fff)" size="small" @click="payment">去结算</van-button></div>
-          </div>
-        </div>
       </div>
+    <div class="but" v-if="allPrice">
+      <div class="desc">
+        <div class="before"><van-button color="linear-gradient(to right, #ff63e7, #fd0fff)" size="small" @click="expurgate">删除</van-button></div>
+        <div><van-button color="linear-gradient(to right, #ff63e7, #fd0fff)" size="small" @click="payment">去结算</van-button></div>
+      </div>
+    </div>
     <div class="allGoods" :class="{allGoods1:allPrice}" ref="wrapper">
       <div>
         <div v-for="(item, index) in shopList" :key="index" class="good">
@@ -115,7 +115,14 @@ export default {
     },
     //结算
     payment() {
-
+      this.shopList.map(item => {
+        if (item.check) {
+          this.checkedGoods.push(item);
+        }
+      });
+      this.$store.state.checkedGoods = this.checkedGoods;
+      this.$store.state.allPrice = this.allPrice;
+      this.$router.push("/settleAccounts");
     },
     //修改商品数量
     async add(count,value) {
@@ -236,26 +243,26 @@ export default {
   }
 }
 .but {
-  position: absolute;
-  top: 55px;
   height: 30px;
   width: 92%;
   background: white;
-  padding-right: 8%;
   .desc {
     display: flex;
     justify-content: flex-end;
     width: 100%;
+    position: relative;
+    left: -30px;
   }
   .before {
     margin-right: 10px;
   }
 }
 .allGoods {
-  height: 500px;
   z-index: -99;
   position: fixed;
   background: white;
+  top: 110px;
+  bottom: 50px;
   width: 92%;
   padding: 0 4%;
   .good {
@@ -282,8 +289,11 @@ export default {
         color: red;
         position: relative;
         .title {
+          width: 90%;
           font-size: 17px;
+          text-overflow: ellipsis;
           overflow: hidden;
+          white-space: nowrap;
           height: 20px;
           line-height: 20px;
         }
@@ -294,6 +304,7 @@ export default {
           justify-content: space-between;
           .price {
             line-height: 28px;
+            font-weight: bold;
           }
           .count {
             width: 100px;
@@ -306,6 +317,6 @@ export default {
   }
 }
 .allGoods1 {
-  margin-top: 30px;
+  top: 140px;
 }
 </style>

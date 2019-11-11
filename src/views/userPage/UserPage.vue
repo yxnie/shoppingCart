@@ -21,7 +21,7 @@
     </div>
     <bar></bar>
     <div class="foot">
-      <div class="word top">
+      <div class="word top" @click="skip('/myOrder')">
         <van-icon name="arrow" class="go" />
         <van-icon name="orders-o" />
         <div class="desc">全部订单</div>

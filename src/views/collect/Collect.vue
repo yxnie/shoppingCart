@@ -5,15 +5,21 @@
     </top>
     <div class="all" ref="wrapper">
       <div>
-        <div v-for="(item, index) in data" :key="index" class="goods">
-          <div class="img">
+        <div
+          v-for="(item, index) in data"
+          :key="index"
+          class="goods"
+        >
+          <div class="img" @click="skip(item)">
             <img :src="item.image_path" alt="" />
           </div>
           <div class="word">
-            <div class="name">{{ item.name }}</div>
-            <div class="price">￥{{ item.present_price }}</div>
+            <div class="name" @click="skip(item)">{{ item.name }}</div>
+            <div class="price" @click="skip(item)">￥{{ item.present_price }}</div>
           </div>
-          <div class="cross" @click="remove(item,index)"><van-icon name="cross" size="12px" /></div>
+          <div class="cross" @click="remove(item, index)">
+            <van-icon name="cross" size="12px" />
+          </div>
         </div>
       </div>
     </div>
@@ -32,10 +38,11 @@ export default {
   data() {
     return {
       count: null, //我的收藏条数
-      data: [], //收藏列表
+      data: [] //收藏列表
     };
   },
   methods: {
+    //查询收藏
     async getCollection() {
       try {
         let res = await this.$api.getCollection();
@@ -54,7 +61,8 @@ export default {
         console.log(e);
       }
     },
-    async remove(item,index) {
+    //移除收藏
+    async remove(item, index) {
       try {
         let res = await this.$api.cancelCollection(item.cid);
         if (res.code === 200) {
@@ -64,6 +72,10 @@ export default {
       } catch (e) {
         console.log(e);
       }
+    },
+    //跳转收藏
+    skip(item) {
+      this.$router.push({name :"productDetails",query:{id:item.cid}})
     }
   },
   mounted() {
@@ -83,6 +95,7 @@ export default {
   top: 50px;
   bottom: 0;
   background: white;
+  width: 100%;
 }
 .goods {
   display: flex;

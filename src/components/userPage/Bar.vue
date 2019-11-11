@@ -13,7 +13,7 @@
         <van-icon name="logistics" size="30px" />
         <div>待收货</div>
       </div>
-      <div class="title">
+      <div class="title" @click="skip">
         <van-icon name="thumb-circle-o" size="30px" />
         <div>评价</div>
       </div>
@@ -33,7 +33,11 @@ export default {
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    skip() {
+      this.$router.push("/assessmentCenter");
+    }
+  },
   mounted() {},
   created() {},
   filters: {},

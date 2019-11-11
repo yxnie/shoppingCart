@@ -35,7 +35,7 @@
         <detail :data="data.goodsOne"></detail>
       </div>
     </div>
-    <goodsAction :id="id" :price="data.goodsOne.present_price" v-if="data.goodsOne"></goodsAction>
+    <goodsAction :id="id" :goodsOne="data.goodsOne"></goodsAction>
   </div>
 </template>
 
@@ -65,6 +65,7 @@ export default {
       try {
         let res = await this.$api.goodOne(id);
         this.data = res.goods;
+        console.log(this.data,1);
         if (res.code === 200) {
           this.$nextTick(() => {
             this.scroll = new BScroll(this.$refs.wrapper, {
@@ -78,7 +79,7 @@ export default {
         console.log(e);
       }
     },
-    //收藏接口
+    //收藏
     async collection(goods) {
       try {
         let res = await this.$api.collection(goods);
@@ -96,8 +97,9 @@ export default {
     async cancelCollection(id) {
       try {
         let res = await this.$api.cancelCollection(id);
-        console.log(res);
-        this.lock = true;
+        if (res.code === 200){
+          this.lock = true;
+        }
       } catch (e) {
         console.log(e);
       }

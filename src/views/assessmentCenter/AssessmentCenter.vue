@@ -1,13 +1,21 @@
 <template>
   <div>
-    AssessmentCenter
+    <top>
+      会员中心
+    </top>
+    <div>
+      <div></div>
+    </div>
   </div>
 </template>
 
 <script>
+import top from "../../components/public/Top";
 export default {
   name: "AssessmentCenter",
-  components: {},
+  components: {
+    top
+  },
   props: {},
   data() {
     return {};
