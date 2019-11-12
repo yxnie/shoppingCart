@@ -5,7 +5,7 @@
       会员中心
     </top>
     <div class="center">
-      <settings v-if="!data"></settings>
+      <settings v-if="data"></settings>
       <div class="head">
         <img
           src="http://img4.imgtn.bdimg.com/it/u=198369807,133263955&fm=27&gp=0.jpg"
@@ -58,7 +58,8 @@ export default {
   },
   props: {},
   data() {
-    return {};
+    return {
+    };
   },
   methods: {
     async loginOut() {
@@ -76,9 +77,9 @@ export default {
     login() {
       this.$router.push("/login");
     },
-    skip(path){
+    skip(path) {
       this.$router.push(path);
-    }
+    },
   },
   mounted() {},
   created() {},

@@ -65,7 +65,6 @@ export default {
       try {
         let res = await this.$api.goodOne(id);
         this.data = res.goods;
-        console.log(this.data,1);
         if (res.code === 200) {
           this.$nextTick(() => {
             this.scroll = new BScroll(this.$refs.wrapper, {

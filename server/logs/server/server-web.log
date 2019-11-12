@@ -998,3 +998,153 @@ model: undefined
 pid: 7092
 hostname: stu005
 
+2019-11-11 14:32:26,030 ERROR 6416 [-/127.0.0.1/-/24ms POST /v1/order] nodejs.TypeError: Cannot read property 'length' of undefined
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:178:42)
+    at Object.callFn (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-core@4.17.3@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-core@4.17.3@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:19
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:56
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+
+pid: 6416
+hostname: stu005
+
+2019-11-11 18:20:26,524 ERROR 6416 [-/127.0.0.1/-/38ms POST /v1/order] nodejs.ValidationError: OrderList validation failed: mallPrice: Cast to Number failed for value "NaN" at path "mallPrice", order_list.0.mallPrice: Cast to Number failed for value "NaN" at path "mallPrice"
+    at new ValidationError (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:2394:32)
+    at model.$set (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:1175:12)
+    at model._handleIndex (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:930:14)
+    at model.$set (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:874:22)
+    at model.Document (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:136:12)
+    at model.Model (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\model.js:93:12)
+    at new model (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\model.js:4420:15)
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:223:25)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+errors: {"mallPrice":{"message":"Cast to Number failed for value \"NaN\" at path \"mallPrice\"","name":"CastError","stringValue":"\"NaN\"","kind":"Number","value":null,"path":"mallPrice","reason":{"message":"Cast to number failed for value \"NaN\" at path \"mallPrice\"","name":"CastError","stringValue":"\"NaN\"","kind":"number","value":null,"path":"mallPrice"}},"order_list.0.mallPrice":{"message":"Cast to Number failed for value \"NaN\" at path \"mallPrice\"","name":"CastError","stringValue":"\"NaN\"","kind":"Number","value":null,"path":"mallPrice","reason":{"message":"Cast to number failed for value \"NaN\" at path \"mallPrice\"","name":"CastError","stringValue":"\"NaN\"","kind":"number","value":null,"path":"mallPrice"}}}
+_message: "OrderList validation failed"
+message: "OrderList validation failed: mallPrice: Cast to Number failed for value \"NaN\" at path \"mallPrice\", order_list.0.mallPrice: Cast to Number failed for value \"NaN\" at path \"mallPrice\""
+name: "ValidationError"
+pid: 6416
+hostname: stu005
+
+2019-11-12 13:35:27,817 ERROR 7868 [-/127.0.0.1/-/8ms POST /v1/goodsOne/comment] nodejs.TypeError: Cannot read property 'length' of undefined
+    at OperatingGoodsController.comment (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:247:24)
+    at Object.callFn (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-core@4.17.3@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-core@4.17.3@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:19
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:56
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+
+pid: 7868
+hostname: stu005
+
+2019-11-12 13:36:33,479 ERROR 7868 [-/127.0.0.1/-/2ms POST /v1/goodsOne/comment] nodejs.TypeError: Cannot read property 'length' of undefined
+    at OperatingGoodsController.comment (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:247:24)
+    at Object.callFn (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-core@4.17.3@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-core@4.17.3@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:19
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:56
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+
+pid: 7868
+hostname: stu005
+
+2019-11-12 13:38:26,228 ERROR 7868 [-/127.0.0.1/-/2ms POST /v1/goodsOne/comment] nodejs.TypeError: Cannot read property 'length' of undefined
+    at OperatingGoodsController.comment (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:247:24)
+    at Object.callFn (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-core@4.17.3@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-core@4.17.3@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:19
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:56
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+
+pid: 7868
+hostname: stu005
+
+2019-11-12 13:41:01,267 ERROR 7868 [-/127.0.0.1/-/2ms POST /v1/goodsOne/comment] nodejs.TypeError: Cannot read property 'length' of undefined
+    at OperatingGoodsController.comment (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:247:24)
+    at Object.callFn (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-core@4.17.3@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-core@4.17.3@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:19
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:56
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+
+pid: 7868
+hostname: stu005
+
+2019-11-12 13:46:49,258 ERROR 7868 [-/127.0.0.1/-/2ms POST /v1/goodsOne/comment] nodejs.TypeError: Cannot read property 'length' of undefined
+    at OperatingGoodsController.comment (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:247:24)
+    at Object.callFn (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-core@4.17.3@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-core@4.17.3@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:19
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:56
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+
+pid: 7868
+hostname: stu005
+

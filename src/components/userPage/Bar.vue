@@ -14,7 +14,8 @@
         <div>待收货</div>
       </div>
       <div class="title" @click="skip">
-        <van-icon name="thumb-circle-o" size="30px" />
+        <van-icon name="thumb-circle-o" size="30px" :info="length" v-if="length"/>
+        <van-icon name="thumb-circle-o" size="30px" v-else/>
         <div>评价</div>
       </div>
       <div class="title">
@@ -31,14 +32,29 @@ export default {
   components: {},
   props: {},
   data() {
-    return {};
+    return {
+      length: null
+    };
   },
   methods: {
     skip() {
       this.$router.push("/assessmentCenter");
+    },
+    //待评价
+    async tobeEvaluated() {
+      try {
+        let res = await this.$api.tobeEvaluated();
+        if (res.code === 200) {
+          this.length = res.data.list.length;
+        }
+      } catch (e) {
+        console.log(e);
+      }
     }
   },
-  mounted() {},
+  mounted() {
+    this.tobeEvaluated();
+  },
   created() {},
   filters: {},
   computed: {},

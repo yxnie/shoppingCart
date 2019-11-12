@@ -84,7 +84,6 @@ export default {
         let res = await this.$api.register(nickname, password, verify);
         if (res.code === 200) {
           this.$store.state.user = res.userInfo; //用户存入store
-          // console.log(this.$store.state.user,2);
           localStorage.setItem("name", JSON.stringify(this.user)); //用户存入localstorage
           this.$router.back();
         }else {
@@ -102,8 +101,7 @@ export default {
         let res = await this.$api.login(nickname, password, verify);
         if (res.code === 200) {
           this.$store.state.user = res.userInfo; //用户存入store
-          // console.log(this.$store.state.user,1);
-          localStorage.setItem("name", JSON.stringify(this.user)); //用户存入localstorage
+          localStorage.setItem("name", JSON.stringify(res.userInfo)); //用户存入localstorage
           this.$router.back();
         }else {
           this.getAverify();

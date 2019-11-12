@@ -1,15 +1,50 @@
 <template>
   <div>
     <top>
-      会员中心
+      评价中心
     </top>
-    <div>
-      <div></div>
+    <div class="title">
+      <div><img src="../../assets/images/evaluate.jpg" alt="" /></div>
+      <div class="evaluate">
+        <van-tabs v-model="active" @click="roll">
+          <van-tab title="待评价"></van-tab>
+          <van-tab title="已评价"></van-tab>
+        </van-tabs>
+      </div>
+    </div>
+    <div class="fill"></div>
+    <div ref="wrapper" class="foot">
+      <div v-if="!active && list.length">
+        <div v-for="(item, index) in list" :key="index" class="goods">
+          <div class="img" @click="goDetails(item.cid)"><img :src="item.image_path" alt="" /></div>
+          <div class="word" @click="goDetails(item.cid)">
+            {{ item.name }}
+          </div>
+          <div class="but" @click="skip('grade', item)">
+            <div class="icon"><van-icon name="chat" /></div>
+            <div>评论晒单</div>
+          </div>
+        </div>
+      </div>
+      <div v-else-if="active && finishList.length">
+        <div v-for="(item, index) in finishList" :key="index" class="goods">
+          <div class="img" @click="goDetails(item.cid)"><img :src="item.goods[0].image_path" alt="" /></div>
+          <div class="word" @click="goDetails(item.cid)">
+            {{ item.goods[0].name }}
+          </div>
+          <div class="but but1" @click="skip('evaluationDetails', item)">
+            <div class="icon"><van-icon name="search" /></div>
+            <div>查看评价</div>
+          </div>
+        </div>
+      </div>
+      <div v-else class="noOrder">暂无订单</div>
     </div>
   </div>
 </template>
 
 <script>
+import BScroll from "better-scroll";
 import top from "../../components/public/Top";
 export default {
   name: "AssessmentCenter",
@@ -18,10 +53,72 @@ export default {
   },
   props: {},
   data() {
-    return {};
+    return {
+      active: 0, //默认选中
+      list: [], //待评价列表
+      finishList: [] //已评价列表
+    };
   },
-  methods: {},
-  mounted() {},
+  methods: {
+    //待评价
+    async tobeEvaluated() {
+      try {
+        let res = await this.$api.tobeEvaluated();
+        if (res.code === 200) {
+          this.list = res.data.list;
+          this.$nextTick(() => {
+            this.scroll = new BScroll(this.$refs.wrapper, {
+              scrollY: true,
+              click: true,
+              startY: 0
+            });
+          });
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    },
+    //已评价
+    async alreadyEvaluated() {
+      try {
+        let res = await this.$api.alreadyEvaluated();
+        if (res.code === 200) {
+          this.finishList = res.data.list;
+          this.$nextTick(() => {
+            this.scroll = new BScroll(this.$refs.wrapper, {
+              scrollY: true,
+              click: true,
+              startY: 0
+            });
+          });
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    },
+    //平滑滚动
+    roll() {
+      this.$nextTick(() => {
+        this.scroll = new BScroll(this.$refs.wrapper, {
+          scrollY: true,
+          click: true,
+          startY: 0
+        });
+      });
+    },
+    //立即评价
+    skip(path, item) {
+      this.$router.push({ name: path, query: { data: item } });
+    },
+    //前往详情
+    goDetails(item) {
+      this.$router.push({name :"productDetails",query:{id:item}})
+    }
+  },
+  mounted() {
+    this.tobeEvaluated();
+    this.alreadyEvaluated();
+  },
   created() {},
   filters: {},
   computed: {},
@@ -30,4 +127,74 @@ export default {
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.title {
+  position: relative;
+  img {
+    display: block;
+  }
+  .evaluate {
+    width: 86%;
+    position: absolute;
+    left: 7%;
+    bottom: -30px;
+    box-shadow: 2px 2px 3px rgba(128, 121, 123, 0.59);
+    border-radius: 5px;
+  }
+}
+.fill {
+  height: 30px;
+  background: white;
+}
+.foot {
+  position: fixed;
+  top: 245px;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  .goods {
+    padding: 15px;
+    display: flex;
+    background: white;
+    border-bottom: 1px solid rgba(128, 121, 123, 0.57);
+    position: relative;
+    .img {
+      width: 70px;
+      height: 70px;
+      img {
+        display: block;
+      }
+    }
+    .but {
+      flex: 1;
+      position: absolute;
+      right: 15px;
+      bottom: 15px;
+      color: red;
+      display: flex;
+      width: 90px;
+      border: 1px solid red;
+      padding: 5px;
+      border-radius: 30px;
+      font-size: 14px;
+      .icon {
+        margin-left: 5px;
+        margin-right: 10px;
+      }
+    }
+    .but1 {
+      color: black;
+      border: 1px solid black;
+    }
+    .word {
+      padding-left: 20px;
+    }
+  }
+}
+.noOrder {
+  text-align: center;
+  margin-top: 150px;
+  font-size: 30px;
+  color: red;
+}
+</style>

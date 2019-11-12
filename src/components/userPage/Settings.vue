@@ -116,7 +116,7 @@ export default {
     async user() {
       try {
         let res = await this.$api.user();
-        if (res.code !== -1){
+        if (res.code !== -1) {
           this.id = res.userInfo._id;
         }
       } catch (e) {
@@ -163,9 +163,9 @@ export default {
         let res = await this.$api.saveUser(val);
         if (res.code === 200) {
           this.$toast(res.msg);
-          this.$store.state.user = res.user;
+          this.$store.state.user = res.user; //用户存入store
+          localStorage.setItem("name", JSON.stringify(res.user)); //用户存入localstorage
         }
-        console.log(res);
       } catch (e) {
         console.log(e);
       }
