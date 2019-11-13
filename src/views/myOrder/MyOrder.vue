@@ -4,7 +4,7 @@
       我的订单
     </top>
     <div class="all" ref="wrapper">
-      <div>
+      <div v-if="list.length">
         <div v-for="(item,index) in list" :key="index" class="order">
           <div class="title">
             <div class="orderId">订单编号 : {{item.order_id}}</div>
@@ -25,6 +25,7 @@
           <div CLASS="public">共{{item.order_list.length}}件商品 合计：{{item.mallPrice}}</div>
         </div>
       </div>
+      <div v-else class="no">暂无订单</div>
     </div>
   </div>
 </template>
@@ -140,5 +141,12 @@ export default {
       font-size: 13px;
     }
   }
+}
+.no {
+  margin-top: -15px;
+  text-align: center;
+  padding-top: 100px;
+  height: 100%;
+  background: white;
 }
 </style>

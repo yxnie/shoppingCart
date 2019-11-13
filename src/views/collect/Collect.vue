@@ -4,7 +4,7 @@
       我的收藏
     </top>
     <div class="all" ref="wrapper">
-      <div>
+      <div v-if="count">
         <div
           v-for="(item, index) in data"
           :key="index"
@@ -22,6 +22,7 @@
           </div>
         </div>
       </div>
+      <div v-else class="no">暂无收藏商品哟</div>
     </div>
   </div>
 </template>
@@ -136,5 +137,10 @@ export default {
     border: 1px solid #7f7f7f;
     border-radius: 50%;
   }
+}
+.no {
+  text-align: center;
+  margin-top: 100px;
+  font-size: 17px;
 }
 </style>

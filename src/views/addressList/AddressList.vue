@@ -10,7 +10,9 @@
         @add="onAdd"
         @edit="onEdit"
         @select="select"
-      />
+      >
+        <div v-if="!list.length" class="noAdd">暂无收货地址~~</div>
+      </van-address-list>
     </div>
   </div>
 </template>
@@ -35,15 +37,17 @@ export default {
       try {
         let res = await this.$api.getAddress();
         if (res.code === 200) {
-          res.address.map((item, index) => {
-            if (item.isDefault) {
-              this.chosenAddressId = index;
-            }
-            item.id = index;
-          });
-          let obj = res.address.splice(this.chosenAddressId, 1);
-          res.address.unshift(obj[0]);
-          this.list = res.address;
+          if (res.address.length) {
+            res.address.map((item, index) => {
+              if (item.isDefault) {
+                this.chosenAddressId = index;
+              }
+              item.id = index;
+            });
+            let obj = res.address.splice(this.chosenAddressId, 1);
+            res.address.unshift(obj[0]);
+            this.list = res.address;
+          }
         }
       } catch (e) {
         console.log(e);
@@ -82,6 +86,14 @@ export default {
 
 <style scoped lang="scss">
 .foot {
-  margin-top: 50px;
+  width: 100%;
+  background: white;
+  position: fixed;
+  top: 50px;
+  bottom: 0;
+}
+.noAdd {
+  text-align: center;
+  padding-top: 100px;
 }
 </style>

@@ -4,7 +4,7 @@
       最近浏览
     </top>
     <div class="all" ref="wrapper">
-      <div>
+      <div v-if="data.length > 0">
         <div v-for="(item, index) in data" :key="index" class="goods">
           <div class="img" @click="skip(item)">
             <img :src="item.image_path" alt="" />
@@ -20,6 +20,7 @@
           </div>
         </div>
       </div>
+      <div v-else class="noLook">暂无最近浏览</div>
     </div>
   </div>
 </template>
@@ -126,5 +127,9 @@ export default {
     border: 1px solid #7f7f7f;
     border-radius: 50%;
   }
+}
+.noLook {
+  text-align: center;
+  padding-top: 100px;
 }
 </style>
