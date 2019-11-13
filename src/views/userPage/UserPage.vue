@@ -36,7 +36,7 @@
         <van-icon name="map-marked" />
         <div class="desc">地址管理</div>
       </div>
-      <div class="word">
+      <div class="word" @click="skip('/latelyLook')">
         <van-icon name="arrow" class="go" />
         <van-icon name="eye-o" />
         <div class="desc">最近浏览</div>

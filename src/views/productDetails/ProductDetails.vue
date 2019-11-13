@@ -56,7 +56,9 @@ export default {
     return {
       data: {}, //商品详情数据
       id: "", //商品id
-      lock: true //控制收藏开关
+      lock: true, //控制收藏开关
+      RecentView: "", //最近浏览
+      order: null //最近浏览排序
     };
   },
   methods: {
@@ -65,6 +67,32 @@ export default {
       try {
         let res = await this.$api.goodOne(id);
         this.data = res.goods;
+        if (localStorage.getItem("name")) {
+          this.RecentView = `${JSON.parse(localStorage.getItem("name")).nickname}.RecentView`;
+        }else {
+          this.RecentView = "visitor.RecentView";
+        }
+        if (!localStorage.getItem(this.RecentView)) {
+          let arr = [];
+          arr.push(this.data.goodsOne);
+          localStorage.setItem(this.RecentView, JSON.stringify(arr)); //最近浏览存入localstorage
+        }else {
+          let arr = JSON.parse(localStorage.getItem(this.RecentView));
+          this.order = null;
+          arr.map((item, index) => {
+            if (item.id === this.data.goodsOne.id) {
+              this.order = index;
+            }
+          });
+          if (this.order) {
+            let last = arr.splice(this.order, 1);
+            arr.unshift(last[0]);
+            localStorage.setItem(this.RecentView, JSON.stringify(arr)); //最近浏览存入localstorage
+          }else {
+            arr.unshift(this.data.goodsOne);
+            localStorage.setItem(this.RecentView, JSON.stringify(arr)); //最近浏览存入localstorage
+          }
+        }
         if (res.code === 200) {
           this.$nextTick(() => {
             this.scroll = new BScroll(this.$refs.wrapper, {
@@ -96,7 +124,7 @@ export default {
     async cancelCollection(id) {
       try {
         let res = await this.$api.cancelCollection(id);
-        if (res.code === 200){
+        if (res.code === 200) {
           this.lock = true;
         }
       } catch (e) {

@@ -1,9 +1,19 @@
 <template>
   <div class="all">
-    <div v-for="(item, index) in hot" :key="index" class="commodity"  @click="skip(item)">
+    <div
+      v-for="(item, index) in hot"
+      :key="index"
+      class="commodity"
+      @click="skip(item)"
+    >
       <img :src="item.image" alt="" />
-      <div class="name">{{item.name}}</div>
-      <div class="word"><span class="color">￥{{item.price}}</span><span><s class="mallPrice">￥{{item.mallPrice}}</s></span></div>
+      <div class="name">{{ item.name }}</div>
+      <div class="word">
+        <span class="color">￥{{ item.price }}</span
+        ><span
+          ><s class="mallPrice">￥{{ item.mallPrice }}</s></span
+        >
+      </div>
     </div>
   </div>
 </template>
@@ -23,7 +33,10 @@ export default {
   },
   methods: {
     skip(item) {
-      this.$router.push({name :"productDetails",query:{id:item.goodsId}})
+      this.$router.push({
+        name: "productDetails",
+        query: { id: item.goodsId }
+      });
     }
   },
   mounted() {},

@@ -23,7 +23,10 @@ export default {
   },
   methods: {
     skip(item) {
-      this.$router.push({name :"productDetails",query:{id:item.goodsId}})
+      this.$router.push({
+        name: "productDetails",
+        query: { id: item.goodsId }
+      });
     }
   },
   mounted() {},

@@ -1,6 +1,8 @@
 <template>
   <div>
+    <keep-alive>
     <router-view />
+    </keep-alive>
     <van-tabbar v-model="active" active-color="#ff5700">
       <van-tabbar-item icon="wap-home-o" @click="skip('/')"
         >商城</van-tabbar-item
