@@ -1,31 +1,50 @@
 <template>
   <div>
-    <top>
-      我的订单
-    </top>
-    <div class="all" ref="wrapper">
-      <div v-if="list.length">
-        <div v-for="(item,index) in list" :key="index" class="order">
-          <div class="title">
-            <div class="orderId">订单编号 : {{item.order_id}}</div>
-            <div class="finish">交易完成</div>
-          </div>
-          <div v-for="(item1,index1) in item.order_list" :key="index1" class="goods">
-            <div class="goodsInfo">
-              <div class="goodsPic" @click="skip(item1)"><img :src="item1.image_path" alt=""></div>
-              <div class="goodsName" @click="skip(item1)">{{item1.name}}</div>
-              <div class="goodsNum">
-                <div>￥{{item1.mallPrice}}</div>
-                <div class="goodsCount">×{{item1.count}}</div>
+    <van-loading
+      v-if="lock"
+      type="spinner"
+      color="#1989fa"
+      class="loading"
+      size="50px"
+    />
+    <div v-else>
+      <top>
+        我的订单
+      </top>
+      <div class="all" ref="wrapper">
+        <div v-if="list.length">
+          <div v-for="(item, index) in list" :key="index" class="order">
+            <div class="title">
+              <div class="orderId">订单编号 : {{ item.order_id }}</div>
+              <div class="finish">交易完成</div>
+            </div>
+            <div
+              v-for="(item1, index1) in item.order_list"
+              :key="index1"
+              class="goods"
+            >
+              <div class="goodsInfo">
+                <div class="goodsPic" @click="skip(item1)">
+                  <img :src="item1.image_path" alt="" />
+                </div>
+                <div class="goodsName" @click="skip(item1)">
+                  {{ item1.name }}
+                </div>
+                <div class="goodsNum">
+                  <div>￥{{ item1.mallPrice }}</div>
+                  <div class="goodsCount">×{{ item1.count }}</div>
+                </div>
               </div>
             </div>
+            <div class="public">创建时间 : {{ item.add_time }}</div>
+            <div class="public">收货地址 : {{ item.address }}</div>
+            <div CLASS="public">
+              共{{ item.order_list.length }}件商品 合计：{{ item.mallPrice }}
+            </div>
           </div>
-          <div class="public">创建时间 : {{item.add_time}}</div>
-          <div class="public">收货地址 : {{item.address}}</div>
-          <div CLASS="public">共{{item.order_list.length}}件商品 合计：{{item.mallPrice}}</div>
         </div>
+        <div v-else class="no">暂无订单</div>
       </div>
-      <div v-else class="no">暂无订单</div>
     </div>
   </div>
 </template>
@@ -41,7 +60,8 @@ export default {
   props: {},
   data() {
     return {
-      list: []
+      list: [],
+      lock: true //加载页面开关
     };
   },
   methods: {
@@ -51,6 +71,7 @@ export default {
         let res = await this.$api.getMyOrder();
         if (res.code === 200) {
           this.list = res.list;
+          this.lock = false;
           this.$nextTick(() => {
             this.scroll = new BScroll(this.$refs.wrapper, {
               scrollY: true,
@@ -64,7 +85,7 @@ export default {
       }
     },
     skip(item) {
-      this.$router.push({name :"productDetails",query:{id:item.cid}})
+      this.$router.push({ name: "productDetails", query: { id: item.cid } });
     }
   },
   mounted() {
@@ -79,6 +100,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.loading {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  line-height: 100vh;
+  background: white;
+}
 .all {
   position: fixed;
   width: 100%;
@@ -89,7 +119,7 @@ export default {
     width: 94%;
     margin: 0 3% 15px 3%;
     border-radius: 8px;
-    box-shadow: 2px 3px 5px rgba(137,130,132,0.78);
+    box-shadow: 2px 3px 5px rgba(137, 130, 132, 0.78);
     .title {
       display: flex;
       font-size: 14px;
@@ -110,7 +140,7 @@ export default {
       .goodsPic {
         width: 70px;
         height: 70px;
-        border: 1px solid rgba(160,153,155,0.59);
+        border: 1px solid rgba(160, 153, 155, 0.59);
         border-radius: 8px;
         margin: 10px;
         img {

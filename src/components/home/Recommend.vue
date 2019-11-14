@@ -59,8 +59,7 @@ export default {
   mounted() {
     this.$nextTick(() => {
       this.scroll = new BScroll(this.$refs.wrapper, {
-        scrollX: true,
-        click: true
+        scrollX: true
       });
     });
   },

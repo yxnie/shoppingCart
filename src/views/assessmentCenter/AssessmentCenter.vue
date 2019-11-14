@@ -1,44 +1,57 @@
 <template>
   <div>
-    <top>
-      评价中心
-    </top>
-    <div class="title">
-      <div><img src="../../assets/images/evaluate.jpg" alt="" /></div>
-      <div class="evaluate">
-        <van-tabs v-model="active" @click="roll">
-          <van-tab title="待评价"></van-tab>
-          <van-tab title="已评价"></van-tab>
-        </van-tabs>
-      </div>
-    </div>
-    <div class="fill"></div>
-    <div ref="wrapper" class="foot">
-      <div v-if="!active && list.length">
-        <div v-for="(item, index) in list" :key="index" class="goods">
-          <div class="img" @click="goDetails(item.cid)"><img :src="item.image_path" alt="" /></div>
-          <div class="word" @click="goDetails(item.cid)">
-            {{ item.name }}
-          </div>
-          <div class="but" @click="skip('grade', item)">
-            <div class="icon"><van-icon name="chat" /></div>
-            <div>评论晒单</div>
-          </div>
+    <van-loading
+      v-if="lock"
+      type="spinner"
+      color="#1989fa"
+      class="loading"
+      size="50px"
+    />
+    <div v-else>
+      <top>
+        评价中心
+      </top>
+      <div class="title">
+        <div><img src="../../assets/images/evaluate.jpg" alt="" /></div>
+        <div class="evaluate">
+          <van-tabs v-model="active" @click="roll">
+            <van-tab title="待评价"></van-tab>
+            <van-tab title="已评价"></van-tab>
+          </van-tabs>
         </div>
       </div>
-      <div v-else-if="active && finishList.length">
-        <div v-for="(item, index) in finishList" :key="index" class="goods">
-          <div class="img" @click="goDetails(item.cid)"><img :src="item.goods[0].image_path" alt="" /></div>
-          <div class="word" @click="goDetails(item.cid)">
-            {{ item.goods[0].name }}
-          </div>
-          <div class="but but1" @click="skip('evaluationDetails', item)">
-            <div class="icon"><van-icon name="search" /></div>
-            <div>查看评价</div>
+      <div class="fill"></div>
+      <div ref="wrapper" class="foot">
+        <div v-if="!active && list.length">
+          <div v-for="(item, index) in list" :key="index" class="goods">
+            <div class="img" @click="goDetails(item.cid)">
+              <img :src="item.image_path" alt="" />
+            </div>
+            <div class="word" @click="goDetails(item.cid)">
+              {{ item.name }}
+            </div>
+            <div class="but" @click="skip('grade', item)">
+              <div class="icon"><van-icon name="chat" /></div>
+              <div>评论晒单</div>
+            </div>
           </div>
         </div>
+        <div v-else-if="active && finishList.length">
+          <div v-for="(item, index) in finishList" :key="index" class="goods">
+            <div class="img" @click="goDetails(item.cid)">
+              <img :src="item.goods[0].image_path" alt="" />
+            </div>
+            <div class="word" @click="goDetails(item.cid)">
+              {{ item.goods[0].name }}
+            </div>
+            <div class="but but1" @click="skip('evaluationDetails', item)">
+              <div class="icon"><van-icon name="search" /></div>
+              <div>查看评价</div>
+            </div>
+          </div>
+        </div>
+        <div v-else class="noOrder">暂无订单</div>
       </div>
-      <div v-else class="noOrder">暂无订单</div>
     </div>
   </div>
 </template>
@@ -56,7 +69,8 @@ export default {
     return {
       active: 0, //默认选中
       list: [], //待评价列表
-      finishList: [] //已评价列表
+      finishList: [], //已评价列表
+      lock: true
     };
   },
   methods: {
@@ -66,6 +80,7 @@ export default {
         let res = await this.$api.tobeEvaluated();
         if (res.code === 200) {
           this.list = res.data.list;
+          this.lock = false;
           this.$nextTick(() => {
             this.scroll = new BScroll(this.$refs.wrapper, {
               scrollY: true,
@@ -112,7 +127,7 @@ export default {
     },
     //前往详情
     goDetails(item) {
-      this.$router.push({name :"productDetails",query:{id:item}})
+      this.$router.push({ name: "productDetails", query: { id: item } });
     }
   },
   mounted() {
@@ -128,6 +143,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.loading {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  line-height: 100vh;
+  background: white;
+}
 .title {
   position: relative;
   img {

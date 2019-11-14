@@ -1,41 +1,61 @@
 <template>
   <div class="all">
-    <div class="back" @click="goBack">
-      <van-icon name="arrow-left" color="white" class="pic" />
-    </div>
-    <div ref="wrapper" class="wrapper">
-      <div class="content" v-if="data.goodsOne">
-        <swipe :data="data.goodsOne" v-if="data.goodsOne"></swipe>
-        <div class="center">
-          <div class="name">{{ data.goodsOne.name }}</div>
-          <div class="price">￥{{ data.goodsOne.present_price }}</div>
-          <div class="amount">
-            <div>运费： {{ data.goodsOne.__v }}</div>
-            <div>剩余： {{ data.goodsOne.amount }}</div>
-            <div class="like">
-              <span v-if="lock"
-                >收藏 : <van-icon name="like-o" size="20px" @click="collection(data.goodsOne)" class="img"
-              /></span>
-              <span v-else
-                >取消收藏 : <van-icon name="like" color="red" size="20px" @click="cancelCollection(id)" class="img"
-              /></span>
+    <van-loading
+      v-if="lock1"
+      type="spinner"
+      color="#1989fa"
+      class="loading"
+      size="50px"
+    />
+    <div v-else>
+      <div class="back" @click="goBack">
+        <van-icon name="arrow-left" color="white" class="pic" />
+      </div>
+      <div ref="wrapper" class="wrapper">
+        <div class="content" v-if="data.goodsOne">
+          <swipe :data="data.goodsOne" v-if="data.goodsOne"></swipe>
+          <div class="center">
+            <div class="name">{{ data.goodsOne.name }}</div>
+            <div class="price">￥{{ data.goodsOne.present_price }}</div>
+            <div class="amount">
+              <div>运费： {{ data.goodsOne.__v }}</div>
+              <div>剩余： {{ data.goodsOne.amount }}</div>
+              <div class="like">
+                <span v-if="lock"
+                  >收藏 :
+                  <van-icon
+                    name="like-o"
+                    size="20px"
+                    @click="collection(data.goodsOne)"
+                    class="img"
+                /></span>
+                <span v-else
+                  >取消收藏 :
+                  <van-icon
+                    name="like"
+                    color="red"
+                    size="20px"
+                    @click="cancelCollection(id)"
+                    class="img"
+                /></span>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="shop">
-          <div>
-            <van-icon name="shop-o" class="shop_o" />有赞的店<van-tag
-              type="danger"
-              class="danger"
-              >官方</van-tag
-            >
+          <div class="shop">
+            <div>
+              <van-icon name="shop-o" class="shop_o" />有赞的店<van-tag
+                type="danger"
+                class="danger"
+                >官方</van-tag
+              >
+            </div>
+            <div>进入店铺<van-icon name="arrow" class="arrow" /></div>
           </div>
-          <div>进入店铺<van-icon name="arrow" class="arrow" /></div>
+          <detail :data="data"></detail>
         </div>
-        <detail :data="data.goodsOne"></detail>
       </div>
+      <goodsAction :id="id" :goodsOne="data.goodsOne"></goodsAction>
     </div>
-    <goodsAction :id="id" :goodsOne="data.goodsOne"></goodsAction>
   </div>
 </template>
 
@@ -58,7 +78,8 @@ export default {
       id: "", //商品id
       lock: true, //控制收藏开关
       RecentView: "", //最近浏览
-      order: null //最近浏览排序
+      order: null, //最近浏览排序
+      lock1: true
     };
   },
   methods: {
@@ -67,31 +88,32 @@ export default {
       try {
         let res = await this.$api.goodOne(id);
         this.data = res.goods;
+        console.log(this.data.comment);
+        this.lock1 = false;
         if (localStorage.getItem("name")) {
-          this.RecentView = `${JSON.parse(localStorage.getItem("name")).nickname}.RecentView`;
-        }else {
+          this.RecentView = `${
+            JSON.parse(localStorage.getItem("name")).nickname
+          }.RecentView`;
+        } else {
           this.RecentView = "visitor.RecentView";
         }
         if (!localStorage.getItem(this.RecentView)) {
           let arr = [];
           arr.push(this.data.goodsOne);
           localStorage.setItem(this.RecentView, JSON.stringify(arr)); //最近浏览存入localstorage
-        }else {
+        } else {
           let arr = JSON.parse(localStorage.getItem(this.RecentView));
           this.order = null;
           arr.map((item, index) => {
             if (item.id === this.data.goodsOne.id) {
-              this.order = index;
+              this.order = index + 1;
             }
           });
           if (this.order) {
-            let last = arr.splice(this.order, 1);
-            arr.unshift(last[0]);
-            localStorage.setItem(this.RecentView, JSON.stringify(arr)); //最近浏览存入localstorage
-          }else {
-            arr.unshift(this.data.goodsOne);
-            localStorage.setItem(this.RecentView, JSON.stringify(arr)); //最近浏览存入localstorage
+            arr.splice(this.order - 1, 1);
           }
+          arr.unshift(this.data.goodsOne);
+          localStorage.setItem(this.RecentView, JSON.stringify(arr)); //最近浏览存入localstorage
         }
         if (res.code === 200) {
           this.$nextTick(() => {
@@ -112,7 +134,7 @@ export default {
         let res = await this.$api.collection(goods);
         if (res.code === -1) {
           this.$router.push("/login");
-        }else {
+        } else {
           this.lock = false;
         }
         this.$toast(res.msg);
@@ -145,7 +167,7 @@ export default {
       } catch (e) {
         console.log(e);
       }
-    },
+    }
   },
   mounted() {
     this.id = this.$route.query.id;
@@ -161,6 +183,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.loading {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  line-height: 100vh;
+  background: white;
+}
 .back {
   z-index: 99;
   position: fixed;

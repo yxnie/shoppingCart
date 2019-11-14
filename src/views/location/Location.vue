@@ -10,8 +10,8 @@
         class="input"
       />
     </div>
-    <div class="allCity" ref="wrapper">
-      <div>
+<!--    <div class="allCity" ref="wrapper">-->
+<!--      <div>-->
         <div class="search">当前城市</div>
         <div class="box now">
           <div class="city nowCity">{{ city }}</div>
@@ -44,8 +44,8 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
+<!--      </div>-->
+<!--    </div>-->
   </div>
 </template>
 

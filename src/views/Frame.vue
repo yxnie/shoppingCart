@@ -1,6 +1,6 @@
 <template>
   <div>
-    <keep-alive>
+    <keep-alive include="Home , Classify">
     <router-view />
     </keep-alive>
     <van-tabbar v-model="active" active-color="#ff5700">

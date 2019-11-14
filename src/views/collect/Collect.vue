@@ -1,5 +1,7 @@
 <template>
   <div>
+    <van-loading v-if="lock" type="spinner" color="#1989fa" class="loading" size="50px"/>
+    <div v-else>
     <top>
       我的收藏
     </top>
@@ -24,6 +26,7 @@
       </div>
       <div v-else class="no">暂无收藏商品哟</div>
     </div>
+    </div>
   </div>
 </template>
 
@@ -39,7 +42,8 @@ export default {
   data() {
     return {
       count: null, //我的收藏条数
-      data: [] //收藏列表
+      data: [], //收藏列表
+      lock: true //加载页面开关
     };
   },
   methods: {
@@ -50,6 +54,7 @@ export default {
         if (res.code === 200) {
           this.count = res.data.count;
           this.data = res.data.list;
+          this.lock = false;
           this.$nextTick(() => {
             this.scroll = new BScroll(this.$refs.wrapper, {
               scrollY: true,
@@ -91,6 +96,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.loading {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    line-height: 100vh;
+    background: white;
+  }
 .all {
   position: fixed;
   top: 50px;

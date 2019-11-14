@@ -1,27 +1,30 @@
 <template>
   <div>
-    <top>
-      <div slot="back"></div>
-      购物车
-    </top>
-    <div v-if="login === null">
-      <div class="allPage">
-        <div class="all">
-          <div class="empty">
-            <div class="icon"><van-icon name="shopping-cart-o" size="150px" color="red"/></div>
-            <div class="but"><van-button round type="info" size="large">去登录</van-button></div>
+    <van-loading v-if="lock" type="spinner" color="#1989fa" class="loading" size="50px"/>
+    <div v-else>
+      <top>
+        <div slot="back"></div>
+        购物车
+      </top>
+      <div v-if="login === null">
+        <div class="allPage">
+          <div class="all">
+            <div class="empty">
+              <div class="icon"><van-icon name="shopping-cart-o" size="150px" color="red"/></div>
+              <div class="but" @click="goLogin"><van-button round type="info" size="large">去登录</van-button></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div v-else-if="shopList.length" class="all">
-      <goodsList :shopList="shopList"></goodsList>
-    </div>
-    <div v-else class="all">
-      <div class="empty">
-        <div class="icon"><van-icon name="shopping-cart-o" size="150px" color="red"/></div>
-        <div>您的购物车还是空空的哦</div>
-        <div class="but"><van-button round type="info" size="large" @click="goShopping">去购物</van-button></div>
+      <div v-else-if="shopList.length" class="all">
+        <goodsList :shopList="shopList"></goodsList>
+      </div>
+      <div v-else class="all">
+        <div class="empty">
+          <div class="icon"><van-icon name="shopping-cart-o" size="150px" color="red"/></div>
+          <div>您的购物车还是空空的哦</div>
+          <div class="but"><van-button round type="info" size="large" @click="goShopping">去购物</van-button></div>
+        </div>
       </div>
     </div>
   </div>
@@ -39,7 +42,8 @@ export default {
   props: {},
   data() {
     return {
-      shopList: []
+      shopList: [],
+      lock: true //加载页面开关
     };
   },
   methods: {
@@ -47,12 +51,16 @@ export default {
       try {
         let res = await this.$api.getCard();
         this.shopList = res.shopList;
+        this.lock = false;
       } catch (e) {
         console.log(e);
       }
     },
     goShopping() {
       this.$router.push("/");
+    },
+    goLogin() {
+      this.$router.push("/login");
     }
   },
   mounted() {
@@ -62,7 +70,7 @@ export default {
   filters: {},
   computed: {
     login() {
-      return localStorage.getItem("name");
+      return this.$store.state.name;
     }
   },
   watch: {},
@@ -71,6 +79,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.loading {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  line-height: 100vh;
+  background: white;
+}
 .allPage {
   margin-top: 51px;
   position: fixed;

@@ -1,49 +1,70 @@
 <template>
   <div class="all">
-      <div class="top">
-        <div class="diamonds">
-          <van-checkbox
-              v-model="lock"
-              checked-color="red"
-              shape="square"
-              @click="checkAll"
-              class="one"
-          ></van-checkbox
-          >全选
-        </div>
-        <div class="back">
-          <div class="topTitle" :class="{top1:allPrice}">合计：<span class="color">￥{{ allPrice }}</span></div>
-          <div :class="{top2:allPrice}" v-if="allPrice">请确认订单</div>
-        </div>
+    <div class="top">
+      <div class="diamonds">
+        <van-checkbox
+          v-model="lock"
+          checked-color="red"
+          shape="square"
+          @click="checkAll"
+          class="one"
+        ></van-checkbox
+        >全选
       </div>
-    <div class="but" v-if="allPrice">
-      <div class="desc">
-        <div class="before"><van-button color="linear-gradient(to right, #ff63e7, #fd0fff)" size="small" @click="expurgate">删除</van-button></div>
-        <div><van-button color="linear-gradient(to right, #ff63e7, #fd0fff)" size="small" @click="payment">去结算</van-button></div>
+      <div class="back">
+        <div class="topTitle" :class="{ top1: allPrice }">
+          合计：<span class="color">￥{{ allPrice }}</span>
+        </div>
+        <div :class="{ top2: allPrice }" v-if="allPrice">请确认订单</div>
       </div>
     </div>
-    <div class="allGoods" :class="{allGoods1:allPrice}" ref="wrapper">
+    <div class="but" v-if="allPrice">
+      <div class="desc">
+        <div class="before">
+          <van-button
+            color="linear-gradient(to right, #ff63e7, #fd0fff)"
+            size="small"
+            @click="expurgate"
+            >删除</van-button
+          >
+        </div>
+        <div>
+          <van-button
+            color="linear-gradient(to right, #ff63e7, #fd0fff)"
+            size="small"
+            @click="payment"
+            >去结算</van-button
+          >
+        </div>
+      </div>
+    </div>
+    <div class="allGoods" :class="{ allGoods1: allPrice }" ref="wrapper">
       <div>
         <div v-for="(item, index) in shopList" :key="index" class="good">
           <div class="diamonds">
             <van-checkbox
-                v-model="item.check"
-                class="square"
-                checked-color="red"
-                shape="square"
-                @click="check(item)"
+              v-model="item.check"
+              class="square"
+              checked-color="red"
+              shape="square"
+              @click="check(item)"
             ></van-checkbox>
           </div>
           <div class="con">
-            <div class="pic"><img :src="item.image_path" alt="" /></div>
+            <div class="pic" @click="skip(item)"><img :src="item.image_path" alt="" /></div>
             <div class="word">
-              <div class="title">{{ item.name }}</div>
+              <div class="title" @click="skip(item)">{{ item.name }}</div>
               <div class="num">
                 <div class="price">
                   ￥<span>{{ item.mallPrice }}</span>
                 </div>
                 <div class="count">
-                  <van-stepper v-model="item.count" integer @change="add(item.count,index)" min="0"/>
+                  <van-stepper
+                    v-model="item.count"
+                    integer
+                    @change="add(item.count, index)"
+                    min="0"
+                  />
                 </div>
               </div>
             </div>
@@ -106,12 +127,21 @@ export default {
     },
     //删除
     expurgate() {
-      this.shopList.map(item => {
-        if (item.check) {
-          this.checkedId.push(item.cid);
-        }
-      });
-      this.deleteShop(this.checkedId);
+      this.$dialog
+        .confirm({
+          message: "是否确认删除"
+        })
+        .then(() => {
+          this.shopList.map(item => {
+            if (item.check) {
+              this.checkedId.push(item.cid);
+            }
+          });
+          this.deleteShop(this.checkedId);
+        })
+        .catch(() => {
+          // on cancel
+        });
     },
     //结算
     payment() {
@@ -125,11 +155,15 @@ export default {
       this.$router.push("/settleAccounts");
     },
     //修改商品数量
-    async add(count,value) {
+    async add(count, value) {
       if (count) {
         //修改商品数量接口
         try {
-          let res = await this.$api.editCart(count,this.shopList[value].cid,this.shopList[value].mallPrice);
+          let res = await this.$api.editCart(
+            count,
+            this.shopList[value].cid,
+            this.shopList[value].mallPrice
+          );
           if (res.code === 200) {
             this.$toast(res.msg);
           }
@@ -141,7 +175,7 @@ export default {
         try {
           let res = await this.$api.deleteShop(this.checkedId);
           if (res.code === 200) {
-            this.shopList.splice(value,1);
+            this.shopList.splice(value, 1);
             this.checkedId = [];
             this.$toast(res.msg);
             this.$parent.shopList = this.shopList;
@@ -166,6 +200,13 @@ export default {
       } catch (e) {
         console.log(e);
       }
+    },
+    //跳转详情
+    skip(item) {
+      this.$router.push({
+        name: "productDetails",
+        query: { id: item.cid }
+      });
     }
   },
   mounted() {
@@ -288,8 +329,9 @@ export default {
         margin-left: 15px;
         color: red;
         position: relative;
+        margin-right: 10px;
         .title {
-          width: 90%;
+          width: 230px;
           font-size: 17px;
           text-overflow: ellipsis;
           overflow: hidden;

@@ -13,12 +13,12 @@
         <van-icon name="logistics" size="30px" />
         <div>待收货</div>
       </div>
-      <div class="title" @click="skip">
+      <div class="title" @click="skip('/assessmentCenter')">
         <van-icon name="thumb-circle-o" size="30px" :info="length" v-if="length"/>
         <van-icon name="thumb-circle-o" size="30px" v-else/>
         <div>评价</div>
       </div>
-      <div class="title">
+      <div class="title" @click="skip('/finishOrder')">
         <van-icon name="after-sale" size="30px" />
         <div>已完成</div>
       </div>
@@ -37,8 +37,8 @@ export default {
     };
   },
   methods: {
-    skip() {
-      this.$router.push("/assessmentCenter");
+    skip(path) {
+      this.$router.push(path);
     },
     //待评价
     async tobeEvaluated() {

@@ -139,7 +139,9 @@ export default {
     }
   },
   mounted() {
-    this.getCard();
+    if (localStorage.getItem("name")){
+      this.getCard();
+    }
   },
   created() {},
   filters: {},

@@ -1,18 +1,27 @@
 <template>
   <div>
-    <top>
-      地址列表
-    </top>
-    <div class="foot">
-      <van-address-list
-        v-model="chosenAddressId"
-        :list="list"
-        @add="onAdd"
-        @edit="onEdit"
-        @select="select"
-      >
-        <div v-if="!list.length" class="noAdd">暂无收货地址~~</div>
-      </van-address-list>
+    <van-loading
+      v-if="lock"
+      type="spinner"
+      color="#1989fa"
+      class="loading"
+      size="50px"
+    />
+    <div v-else>
+      <top>
+        地址列表
+      </top>
+      <div class="foot">
+        <van-address-list
+          v-model="chosenAddressId"
+          :list="list"
+          @add="onAdd"
+          @edit="onEdit"
+          @select="select"
+        >
+          <div v-if="!list.length" class="noAdd">暂无收货地址~~</div>
+        </van-address-list>
+      </div>
     </div>
   </div>
 </template>
@@ -28,7 +37,8 @@ export default {
   data() {
     return {
       chosenAddressId: null,
-      list: []
+      list: [],
+      lock: true
     };
   },
   methods: {
@@ -47,6 +57,7 @@ export default {
             let obj = res.address.splice(this.chosenAddressId, 1);
             res.address.unshift(obj[0]);
             this.list = res.address;
+            this.lock = false;
           }
         }
       } catch (e) {
@@ -85,6 +96,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.loading {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  line-height: 100vh;
+  background: white;
+}
 .foot {
   width: 100%;
   background: white;
