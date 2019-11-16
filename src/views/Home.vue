@@ -9,8 +9,8 @@
     />
     <div v-else>
       <div class="top">
-        <div class="place" @click="skip('/location')">
-          <span v-if="city"
+        <div class="place">
+          <span v-if="city"  @click="skip('/location')"
             >{{ city }}<img src="../assets/images/down.svg" alt="" class="img"
           /></span>
           <span v-else

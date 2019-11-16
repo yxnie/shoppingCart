@@ -33,7 +33,8 @@ export default {
   props: {},
   data() {
     return {
-      length: null
+      length: 0,
+      page: 1
     };
   },
   methods: {
@@ -41,19 +42,23 @@ export default {
       this.$router.push(path);
     },
     //待评价
-    async tobeEvaluated() {
+    async tobeEvaluated(page) {
       try {
-        let res = await this.$api.tobeEvaluated();
+        let res = await this.$api.tobeEvaluated(page);
         if (res.code === 200) {
-          this.length = res.data.list.length;
+          this.length += res.data.list.length;
+          if (this.length%10===0){
+            this.page++;
+            this.tobeEvaluated(this.page);
+          }
         }
       } catch (e) {
         console.log(e);
       }
-    }
+    },
   },
   mounted() {
-    this.tobeEvaluated();
+    this.tobeEvaluated(this.page);
   },
   created() {},
   filters: {},

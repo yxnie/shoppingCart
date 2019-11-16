@@ -1,6 +1,6 @@
 <template>
   <div>
-    <keep-alive include="Home , Classify">
+    <keep-alive include="Home,Classify" exclude="ShoppingCart">
     <router-view />
     </keep-alive>
     <van-tabbar v-model="active" active-color="#ff5700">

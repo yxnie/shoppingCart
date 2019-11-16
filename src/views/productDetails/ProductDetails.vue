@@ -88,7 +88,6 @@ export default {
       try {
         let res = await this.$api.goodOne(id);
         this.data = res.goods;
-        console.log(this.data.comment);
         this.lock1 = false;
         if (localStorage.getItem("name")) {
           this.RecentView = `${

@@ -67,6 +67,7 @@ export default {
 <style scoped lang="scss">
 /deep/img {
   width: 100%;
+  display: block;
 }
 .head {
   display: flex;

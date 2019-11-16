@@ -102,7 +102,9 @@ export default {
       overflow: hidden;
       white-space: nowrap;
       font-size: 16px;
+      width: 250px;
       height: 20px;
+      line-height: 20px;
     }
     .price {
       color: red;

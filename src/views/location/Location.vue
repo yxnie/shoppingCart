@@ -10,42 +10,42 @@
         class="input"
       />
     </div>
-<!--    <div class="allCity" ref="wrapper">-->
-<!--      <div>-->
-        <div class="search">当前城市</div>
-        <div class="box now">
-          <div class="city nowCity">{{ city }}</div>
-        </div>
-        <div class="search">热门城市</div>
-        <div class="box1 box" v-if="cities.data">
-          <div
-              v-for="(item, index) in cities.data.hotCities"
-              :key="index"
-              class="city"
-              @click="choose(item.name)"
-          >
-            {{ item.name }}
+        <div class="allCity" ref="wrapper">
+    <!--      <div>-->
+    <div class="search">当前城市</div>
+    <div class="box now">
+      <div class="city nowCity">{{ city }}</div>
+    </div>
+    <div class="search">热门城市</div>
+    <div class="box1 box" v-if="cities.data">
+      <div
+        v-for="(item, index) in cities.data.hotCities"
+        :key="index"
+        class="city"
+        @click="choose(item.name)"
+      >
+        {{ item.name }}
+      </div>
+    </div>
+    <div v-if="searchCity.length === 0">
+      <van-index-bar>
+        <div v-for="(item, index) in keys" :key="index">
+          <van-index-anchor :index="item" />
+          <div v-for="(item1, index1) in cityList[index]" :key="index1">
+            <van-cell :title="item1.name" @click="choose(item1.name)" />
           </div>
         </div>
-        <div v-if="searchCity.length === 0">
-          <van-index-bar>
-            <div v-for="(item, index) in keys" :key="index">
-              <van-index-anchor :index="item" />
-              <div v-for="(item1, index1) in cityList[index]" :key="index1">
-                <van-cell :title="item1.name" @click="choose(item1.name)"/>
-              </div>
-            </div>
-          </van-index-bar>
+      </van-index-bar>
+    </div>
+    <div v-else>
+      <div v-for="(item, index) in searchCity" :key="index">
+        <div v-for="(item1, index1) in item" :key="index1">
+          {{ item1.name }}
         </div>
-        <div v-else>
-          <div v-for="(item, index) in searchCity" :key="index">
-            <div v-for="(item1, index1) in item" :key="index1">
-              {{ item1.name }}
-            </div>
-          </div>
+      </div>
+    </div>
+    <!--      </div>-->
         </div>
-<!--      </div>-->
-<!--    </div>-->
   </div>
 </template>
 
@@ -129,11 +129,12 @@ export default {
   }
 }
 .allCity {
-  position: fixed;
-  top: 110px;
-  bottom: 0;
-  width: 100%;
-  overflow: hidden;
+  /*position: fixed;*/
+  /*top: 110px;*/
+  /*bottom: 0;*/
+  /*width: 100%;*/
+  /*overflow: hidden;*/
+  margin-top: 110px;
 }
 .search {
   margin: 10px;

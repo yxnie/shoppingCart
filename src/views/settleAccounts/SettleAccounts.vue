@@ -122,6 +122,7 @@ export default {
         })
         .then(() => {
           this.placeOrder();
+          this.$router.push("/");
         })
         .catch(() => {});
     }

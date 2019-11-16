@@ -23,7 +23,7 @@
       <div class="fill"></div>
       <div ref="wrapper" class="foot">
         <div v-if="!active && list.length">
-          <div v-for="(item, index) in list" :key="index" class="goods">
+          <div v-for="(item, index) in list.concat(more)" :key="index" class="goods">
             <div class="img" @click="goDetails(item.cid)">
               <img :src="item.image_path" alt="" />
             </div>
@@ -70,23 +70,45 @@ export default {
       active: 0, //默认选中
       list: [], //待评价列表
       finishList: [], //已评价列表
-      lock: true
+      lock: true,
+      page: 1,
+      more: []
     };
   },
   methods: {
     //待评价
-    async tobeEvaluated() {
+    async tobeEvaluated(page) {
       try {
-        let res = await this.$api.tobeEvaluated();
+        let res = await this.$api.tobeEvaluated(page);
         if (res.code === 200) {
-          this.list = res.data.list;
+          if (page === 1) {
+            this.list = res.data.list;
+          } else {
+            if (res.data.list.length !== 0) {
+              // this.list = this.list.concat(res.data.list);
+              this.more = res.data.list;
+            }else {
+              this.more = [];
+            }
+          }
           this.lock = false;
           this.$nextTick(() => {
             this.scroll = new BScroll(this.$refs.wrapper, {
               scrollY: true,
               click: true,
-              startY: 0
+              startY: 0,
+              pullUpLoad: {
+                // 当上拉距离超过50px时触发 pullingUp 事件
+                threshold: -50
+              }
             });
+            if (!this.more.length) {
+              this.scroll.on("pullingUp", () => {
+                this.page++;
+                console.log(this.page);
+                this.tobeEvaluated(this.page);
+              });
+            }
           });
         }
       } catch (e) {
@@ -94,18 +116,38 @@ export default {
       }
     },
     //已评价
-    async alreadyEvaluated() {
+    async alreadyEvaluated(page) {
       try {
-        let res = await this.$api.alreadyEvaluated();
+        let res = await this.$api.alreadyEvaluated(page);
         if (res.code === 200) {
-          this.finishList = res.data.list;
+          if (page === 1) {
+            this.finishList = res.data.list;
+          } else {
+            if (res.data.finishList.length !== 0) {
+              // this.finishList = finishList.list.concat(res.data.list);
+              this.more = res.data.list;
+            }else {
+              this.more = [];
+            }
+          }
           this.$nextTick(() => {
             this.scroll = new BScroll(this.$refs.wrapper, {
-              scrollY: true,
+              scrollY: (this.page - 1) * 100,
               click: true,
-              startY: 0
+              startY: 0,
+              pullUpLoad: {
+                // 当上拉距离超过50px时触发 pullingUp 事件
+                threshold: -50
+              }
             });
+            if (!this.more.length) {
+              this.scroll.on("pullingUp", () => {
+                this.page++;
+                this.tobeEvaluated(this.page);
+              });
+            }
           });
+          // this.scroll.finishPullUp();
         }
       } catch (e) {
         console.log(e);
@@ -113,13 +155,8 @@ export default {
     },
     //平滑滚动
     roll() {
-      this.$nextTick(() => {
-        this.scroll = new BScroll(this.$refs.wrapper, {
-          scrollY: true,
-          click: true,
-          startY: 0
-        });
-      });
+      this.page = 1;
+      this.alreadyEvaluated(this.page);
     },
     //立即评价
     skip(path, item) {
@@ -131,8 +168,7 @@ export default {
     }
   },
   mounted() {
-    this.tobeEvaluated();
-    this.alreadyEvaluated();
+    this.tobeEvaluated(this.page);
   },
   created() {},
   filters: {},
